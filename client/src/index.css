@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    @apply bg-gray-950 text-white overflow-hidden;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    user-select: none;
+  }
+  #root { @apply w-screen h-screen overflow-hidden; }
+}
+
+@layer components {
+  .card-slot {
+    @apply border-2 border-dashed border-white/20 rounded-xl
+           flex items-center justify-center
+           transition-all duration-200;
+  }
+  .card-slot.can-drop {
+    @apply border-gold border-solid shadow-[0_0_15px_rgba(212,175,55,0.6)] animate-pulse;
+  }
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl font-bold text-lg
+           bg-gradient-to-r from-yellow-600 to-yellow-400
+           text-gray-900 shadow-lg
+           hover:from-yellow-500 hover:to-yellow-300
+           active:scale-95 transition-all duration-150;
+  }
+  .btn-secondary {
+    @apply px-4 py-2 rounded-lg font-semibold
+           bg-white/10 border border-white/20 text-white
+           hover:bg-white/20 active:scale-95 transition-all duration-150;
+  }
+  .holo-overlay {
+    background: linear-gradient(
+      135deg,
+      transparent 0%,
+      rgba(255,255,255,0.05) 30%,
+      rgba(255,255,255,0.15) 50%,
+      rgba(255,255,255,0.05) 70%,
+      transparent 100%
+    );
+    mix-blend-mode: overlay;
+  }
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.4); border-radius: 2px; }
