@@ -17,77 +17,63 @@ export function getAllTemplates(): CardTemplate[] {
 }
 
 export function getPlayerTemplates(): CardTemplate[] {
-  return getAllTemplates().filter(t =>
-    t.type === CardType.PLAYER_BASE ||
-    t.type === CardType.PLAYER_STAGE1 ||
-    t.type === CardType.PLAYER_STAGE2
-  );
+  return getAllTemplates().filter(t => t.type === CardType.PLAYER);
 }
 
-// 3 decks pré-construits de 40 cartes chacun
 const DECKS: Record<string, string[]> = {
-  roi_de_la_terre: [
-    'nadal_base', 'nadal_base',
-    'nadal_stage1', 'nadal_stage1',
-    'nadal_stage2',
-    'alcaraz_base', 'alcaraz_base',
-    'alcaraz_stage1',
-    'alcaraz_stage2',
-    'wawrinka_base', 'wawrinka_base',
-    'wawrinka_stage1',
-    'borg_base', 'borg_base',
-    'endurance_terre', 'endurance_terre', 'endurance_terre', 'endurance_terre',
-    'endurance_terre', 'endurance_terre', 'endurance_terre', 'endurance_terre',
-    'endurance_terre', 'endurance_terre',
-    'endurance_feu', 'endurance_feu', 'endurance_feu', 'endurance_feu',
-    'staff_kinesitherapeute', 'staff_kinesitherapeute', 'staff_kinesitherapeute',
-    'staff_sponsor', 'staff_sponsor',
-    'equip_raquette_elite', 'equip_raquette_elite',
-    'equip_bandeau',
-    'surface_roland_garros',
-    'endurance_neutre', 'endurance_neutre', 'endurance_neutre',
-  ],
-  champion_mental: [
-    'djokovic_base', 'djokovic_base',
-    'djokovic_stage1', 'djokovic_stage1',
-    'djokovic_stage2',
-    'murray_base', 'murray_base',
-    'murray_stage1',
-    'murray_stage2',
-    'swiatek_base', 'swiatek_base',
-    'swiatek_stage1',
-    'connors_base', 'connors_base',
-    'endurance_mental', 'endurance_mental', 'endurance_mental', 'endurance_mental',
-    'endurance_mental', 'endurance_mental', 'endurance_mental', 'endurance_mental',
-    'endurance_air', 'endurance_air', 'endurance_air', 'endurance_air',
+  legendes_terre_battue: [
+    'nadal_001', 'nadal_001',
+    'alcaraz_014', 'alcaraz_014',
+    'wawrinka_017', 'wawrinka_017',
+    'kuerten_018', 'kuerten_018',
+    'wilander_011', 'wilander_011',
+    'ferrero_045', 'ferrero_045',
+    'muster_048', 'muster_048',
+    'vilas_078', 'vilas_078',
+    'endurance_1', 'endurance_1', 'endurance_1', 'endurance_1',
+    'endurance_1', 'endurance_1', 'endurance_1', 'endurance_1',
+    'endurance_1', 'endurance_1', 'endurance_1', 'endurance_1',
+    'endurance_1', 'endurance_1', 'endurance_1', 'endurance_1',
+    'endurance_1', 'endurance_1', 'endurance_1', 'endurance_1',
     'staff_coach', 'staff_coach',
-    'staff_medecin', 'staff_medecin',
+    'staff_kine',
     'staff_sponsor',
-    'equip_raquette_elite', 'equip_raquette_elite',
-    'equip_balles_premium',
-    'surface_wimbledon',
-    'endurance_neutre', 'endurance_neutre',
   ],
-  aristocrate_du_court: [
-    'federer_base', 'federer_base',
-    'federer_stage1', 'federer_stage1',
-    'federer_stage2',
-    'sampras_base', 'sampras_base',
-    'sampras_stage1',
-    'sampras_stage2',
-    'edberg_base', 'edberg_base',
-    'edberg_stage1',
-    'navratilova_base', 'navratilova_base',
-    'endurance_eau', 'endurance_eau', 'endurance_eau', 'endurance_eau',
-    'endurance_eau', 'endurance_eau', 'endurance_eau', 'endurance_eau',
-    'endurance_eau', 'endurance_eau',
-    'endurance_air', 'endurance_air', 'endurance_air', 'endurance_air',
-    'staff_sponsor', 'staff_sponsor',
-    'staff_coach',
-    'staff_physiotherapeute', 'staff_physiotherapeute',
-    'equip_balles_premium', 'equip_balles_premium',
-    'surface_wimbledon',
-    'endurance_neutre', 'endurance_neutre',
+  aristocrates_gazon: [
+    'federer_003', 'federer_003',
+    'sampras_005', 'sampras_005',
+    'mcenroe_006', 'mcenroe_006',
+    'edberg_010', 'edberg_010',
+    'navratilova_024', 'navratilova_024',
+    'graf_023', 'graf_023',
+    'ivanisevic_083', 'ivanisevic_083',
+    'krajicek_097', 'krajicek_097',
+    'endurance_1', 'endurance_1', 'endurance_1', 'endurance_1',
+    'endurance_1', 'endurance_1', 'endurance_1', 'endurance_1',
+    'endurance_1', 'endurance_1', 'endurance_1', 'endurance_1',
+    'endurance_1', 'endurance_1', 'endurance_1', 'endurance_1',
+    'endurance_1', 'endurance_1', 'endurance_1', 'endurance_1',
+    'staff_coach', 'staff_coach',
+    'staff_kine',
+    'staff_sponsor',
+  ],
+  champions_dur: [
+    'djokovic_002', 'djokovic_002',
+    'agassi_004', 'agassi_004',
+    'lendl_008', 'lendl_008',
+    'connors_007', 'connors_007',
+    'williams_s_025', 'williams_s_025',
+    'sinner_013', 'sinner_013',
+    'medvedev_042', 'medvedev_042',
+    'roddick_043', 'roddick_043',
+    'endurance_1', 'endurance_1', 'endurance_1', 'endurance_1',
+    'endurance_1', 'endurance_1', 'endurance_1', 'endurance_1',
+    'endurance_1', 'endurance_1', 'endurance_1', 'endurance_1',
+    'endurance_1', 'endurance_1', 'endurance_1', 'endurance_1',
+    'endurance_1', 'endurance_1', 'endurance_1', 'endurance_1',
+    'staff_coach', 'staff_coach',
+    'staff_kine',
+    'staff_sponsor',
   ],
 };
 
@@ -99,8 +85,23 @@ export function getDeckTemplateIds(deckId: string): string[] {
 
 export function getAvailableDecks(): Array<{ id: string; name: string; description: string; starPlayer: string }> {
   return [
-    { id: 'roi_de_la_terre', name: 'Roi de la Terre', description: 'Deck AGGRO/TANK centré sur Nadal et Alcaraz. Dominez la terre battue !', starPlayer: 'nadal_stage2' },
-    { id: 'champion_mental', name: 'Champion Mental', description: 'Deck MOTEUR/DISRUPTEUR avec Djokovic et Murray. Contrôlez le jeu par la stratégie.', starPlayer: 'djokovic_stage2' },
-    { id: 'aristocrate_du_court', name: 'Aristocrate du Court', description: 'Deck MOTEUR élégant avec Federer et Sampras. Dominez le gazon avec classe.', starPlayer: 'federer_stage2' },
+    {
+      id: 'legendes_terre_battue',
+      name: 'Légendes de la Terre Battue',
+      description: 'Les maîtres de Roland Garros. Nadal, Alcaraz, Kuerten... dominez l\'ocre !',
+      starPlayer: 'nadal_001',
+    },
+    {
+      id: 'aristocrates_gazon',
+      name: 'Aristocrates du Gazon',
+      description: 'L\'élégance du gazon avec Federer, McEnroe, Navratilova et les grands du gazon.',
+      starPlayer: 'federer_003',
+    },
+    {
+      id: 'champions_dur',
+      name: 'Champions du Dur',
+      description: 'La puissance brute des courts durs. Djokovic, Serena, Lendl, Connors...',
+      starPlayer: 'djokovic_002',
+    },
   ];
 }

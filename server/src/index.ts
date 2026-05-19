@@ -33,7 +33,7 @@ interface LobbyEntry {
 
 interface Room {
   state: GameState;
-  sockets: Record<string, string>; // playerId -> socketId (same here)
+  sockets: Record<string, string>;
 }
 
 const lobby: LobbyEntry[] = [];
@@ -45,10 +45,9 @@ io.on('connection', (socket: Socket) => {
 
   socket.on('join_lobby', (payload: { pseudo: string; deckId: string }) => {
     const pseudo = (payload.pseudo || 'Joueur').trim().slice(0, 20);
-    const deckId = payload.deckId || 'roi_de_la_terre';
+    const deckId = payload.deckId || 'legendes_terre_battue';
 
-    // Validate deck
-    const validDecks = ['roi_de_la_terre', 'champion_mental', 'aristocrate_du_court'];
+    const validDecks = ['legendes_terre_battue', 'aristocrates_gazon', 'champions_dur'];
     if (!validDecks.includes(deckId)) {
       socket.emit('error', { message: 'Deck invalide' });
       return;
@@ -70,7 +69,10 @@ io.on('connection', (socket: Socket) => {
         return;
       }
 
-      const room: Room = { state, sockets: { [opponent.socketId]: opponent.socketId, [socket.id]: socket.id } };
+      const room: Room = {
+        state,
+        sockets: { [opponent.socketId]: opponent.socketId, [socket.id]: socket.id },
+      };
       rooms.set(roomId, room);
       socketToRoom.set(opponent.socketId, { roomId, playerId: opponent.socketId });
       socketToRoom.set(socket.id, { roomId, playerId: socket.id });
@@ -79,8 +81,16 @@ io.on('connection', (socket: Socket) => {
       if (opponentSocket) opponentSocket.join(roomId);
       socket.join(roomId);
 
-      io.to(opponent.socketId).emit('game_start', { roomId, state: sanitize(state, opponent.socketId), myPlayerId: opponent.socketId });
-      io.to(socket.id).emit('game_start', { roomId, state: sanitize(state, socket.id), myPlayerId: socket.id });
+      io.to(opponent.socketId).emit('game_start', {
+        roomId,
+        state: sanitize(state, opponent.socketId),
+        myPlayerId: opponent.socketId,
+      });
+      io.to(socket.id).emit('game_start', {
+        roomId,
+        state: sanitize(state, socket.id),
+        myPlayerId: socket.id,
+      });
     } else {
       lobby.push({ socketId: socket.id, pseudo, deckId });
       socket.emit('waiting_for_opponent');
@@ -147,7 +157,13 @@ function sanitize(state: GameState, viewerId: string): GameState {
   const s: GameState = JSON.parse(JSON.stringify(state));
   for (const [pid, player] of Object.entries(s.players)) {
     if (pid !== viewerId) {
-      const hidden = { id: 'hidden', templateId: 'card_back', type: 'HIDDEN' as any, name: '?', artworkPath: '/artworks/card_back.webp' };
+      const hidden = {
+        id: 'hidden',
+        templateId: 'card_back',
+        type: 'HIDDEN' as const,
+        name: '?',
+        artworkPath: '/artworks/card_back.webp',
+      };
       player.hand = player.hand.map(() => ({ ...hidden }));
       player.deck = player.deck.map(() => ({ ...hidden }));
     }

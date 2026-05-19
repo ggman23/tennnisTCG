@@ -22,31 +22,21 @@ function instantiate(template: CardTemplate): CardInstance {
     type: template.type,
     name: template.name,
     artworkPath: template.artworkPath,
-    element: template.element,
-    secondaryElement: template.secondaryElement,
   };
-  if (
-    template.type === CardType.PLAYER_BASE ||
-    template.type === CardType.PLAYER_STAGE1 ||
-    template.type === CardType.PLAYER_STAGE2
-  ) {
+  if (template.type === CardType.PLAYER) {
     const pc: PlayerCardInstance = {
       ...base,
       maxHp: template.maxHp!,
       currentHp: template.maxHp!,
-      archetype: template.archetype!,
+      tags: template.tags ?? [],
+      specialAbility: template.specialAbility,
       attacks: template.attacks!,
-      retreatCost: template.retreatCost ?? 1,
+      retreatCost: template.retreatCost ?? 2,
       weakness: template.weakness,
-      weaknessMultiplier: template.weaknessMultiplier ?? 2,
       resistance: template.resistance,
-      resistanceValue: template.resistanceValue ?? -20,
-      evolvesFrom: template.evolvesFrom,
       attachedEndurance: [],
       placedThisTurn: false,
       statusEffect: null,
-      setNumber: template.setNumber,
-      flavorText: template.flavorText,
     };
     return pc;
   }
@@ -107,7 +97,6 @@ export function processAction(state: GameState, action: GameAction): ActionResul
     case ActionType.READY:            s = handleReady(s, action); break;
     case ActionType.PLAY_CARD:        s = handlePlayCard(s, action); break;
     case ActionType.ATTACH_ENDURANCE: s = handleAttachEndurance(s, action); break;
-    case ActionType.EVOLVE:           s = handleEvolve(s, action); break;
     case ActionType.RETREAT:          s = handleRetreat(s, action); break;
     case ActionType.ATTACK:           s = handleAttack(s, action); break;
     case ActionType.END_TURN:         s = endTurn(s, action.playerId); break;
@@ -120,7 +109,9 @@ function handleReady(s: GameState, action: GameAction): GameState {
   const { activeCardId, benchCardIds = [] } = action.payload as { activeCardId: string; benchCardIds?: string[] };
   const p = s.players[action.playerId];
   const activeCard = p.hand.find(c => c.id === activeCardId) as PlayerCardInstance;
-  const benchCards = (benchCardIds as string[]).map(id => p.hand.find(c => c.id === id) as PlayerCardInstance).filter(Boolean);
+  const benchCards = (benchCardIds as string[])
+    .map(id => p.hand.find(c => c.id === id) as PlayerCardInstance)
+    .filter(Boolean);
   const usedIds = new Set([activeCardId, ...(benchCardIds as string[])]);
   s.players[action.playerId] = {
     ...p,
@@ -143,32 +134,33 @@ function handlePlayCard(s: GameState, action: GameAction): GameState {
   const p = s.players[action.playerId];
   const card = p.hand.find(c => c.id === cardId)!;
   const newHand = p.hand.filter(c => c.id !== cardId);
-  if (card.type === CardType.PLAYER_BASE) {
+  if (card.type === CardType.PLAYER) {
     const pc = card as PlayerCardInstance;
-    s.players[action.playerId] = { ...p, hand: newHand, bench: [...p.bench, { ...pc, placedThisTurn: true }] };
-  } else if (card.type === CardType.STAFF || card.type === CardType.EQUIPMENT) {
+    s.players[action.playerId] = {
+      ...p,
+      hand: newHand,
+      bench: [...p.bench, { ...pc, placedThisTurn: true }],
+    };
+  } else if (card.type === CardType.STAFF) {
     const template = getTemplate(card.templateId);
-    if (template.effect) s = applyEffect(s, action.playerId, template.effect, targetId);
+    if (template.effect) s = applyStaffEffect(s, action.playerId, template.effect, targetId);
     s.players[action.playerId] = {
       ...s.players[action.playerId],
       hand: s.players[action.playerId].hand.filter(c => c.id !== cardId),
       discard: [...s.players[action.playerId].discard, card],
-      hasPlayedStaffThisTurn: card.type === CardType.STAFF ? true : s.players[action.playerId].hasPlayedStaffThisTurn,
+      hasPlayedStaffThisTurn: true,
     };
-  } else if (card.type === CardType.SURFACE) {
-    s.activeSurface = card;
-    s.players[action.playerId] = { ...p, hand: newHand };
   }
   return s;
 }
 
-function applyEffect(s: GameState, playerId: string, effect: string, targetId?: string): GameState {
+function applyStaffEffect(s: GameState, playerId: string, effect: string, targetId?: string): GameState {
   const p = s.players[playerId];
   switch (effect) {
     case 'DRAW_2': s.players[playerId] = drawCards(p, 2); break;
     case 'DRAW_3': s.players[playerId] = drawCards(p, 3); break;
-    case 'HEAL_30': s = healTarget(s, playerId, targetId, 30); break;
-    case 'HEAL_50': s = healTarget(s, playerId, targetId, 50); break;
+    case 'HEAL_30': s = healTarget(s, playerId, targetId ?? p.active?.id, 30); break;
+    case 'HEAL_50': s = healTarget(s, playerId, targetId ?? p.active?.id, 50); break;
     case 'REMOVE_STATUS':
       if (p.active) s.players[playerId].active!.statusEffect = null;
       break;
@@ -196,34 +188,15 @@ function handleAttachEndurance(s: GameState, action: GameAction): GameState {
   const p = s.players[action.playerId];
   const card = p.hand.find(c => c.id === energyCardId)!;
   if (p.active?.id === targetId) p.active.attachedEndurance.push(card);
-  else { const bi = p.bench.findIndex(c => c.id === targetId); if (bi >= 0) p.bench[bi].attachedEndurance.push(card); }
-  s.players[action.playerId] = { ...p, hand: p.hand.filter(c => c.id !== energyCardId), hasAttachedEnduranceThisTurn: true };
-  return s;
-}
-
-function handleEvolve(s: GameState, action: GameAction): GameState {
-  const { evolveCardId, targetId } = action.payload as { evolveCardId: string; targetId: string };
-  const p = s.players[action.playerId];
-  const evolveCard = p.hand.find(c => c.id === evolveCardId) as PlayerCardInstance;
-  const newHand = p.hand.filter(c => c.id !== evolveCardId);
-  const evolve = (old: PlayerCardInstance): PlayerCardInstance => ({
-    ...evolveCard,
-    currentHp: Math.max(1, evolveCard.maxHp - (old.maxHp - old.currentHp)),
-    attachedEndurance: old.attachedEndurance,
-    placedThisTurn: false,
-    statusEffect: null,
-  });
-  if (p.active?.id === targetId) {
-    const old = p.active;
-    s.players[action.playerId] = { ...p, hand: newHand, active: evolve(old), discard: [...p.discard, { ...old, attachedEndurance: [] }] };
-  } else {
+  else {
     const bi = p.bench.findIndex(c => c.id === targetId);
-    if (bi >= 0) {
-      const old = p.bench[bi];
-      const bench = [...p.bench]; bench[bi] = evolve(old);
-      s.players[action.playerId] = { ...p, hand: newHand, bench, discard: [...p.discard, { ...old, attachedEndurance: [] }] };
-    }
+    if (bi >= 0) p.bench[bi].attachedEndurance.push(card);
   }
+  s.players[action.playerId] = {
+    ...p,
+    hand: p.hand.filter(c => c.id !== energyCardId),
+    hasAttachedEnduranceThisTurn: true,
+  };
   return s;
 }
 
@@ -236,8 +209,69 @@ function handleRetreat(s: GameState, action: GameAction): GameState {
   const oldActive: PlayerCardInstance = { ...p.active!, attachedEndurance: remaining };
   const bi = p.bench.findIndex(c => c.id === newActiveId);
   const newActive = { ...p.bench[bi] };
-  const bench = [...p.bench]; bench[bi] = oldActive;
-  s.players[action.playerId] = { ...p, active: newActive, bench, discard: [...p.discard, ...discarded], hasRetreatedThisTurn: true };
+  const bench = [...p.bench];
+  bench[bi] = oldActive;
+  s.players[action.playerId] = {
+    ...p,
+    active: newActive,
+    bench,
+    discard: [...p.discard, ...discarded],
+    hasRetreatedThisTurn: true,
+  };
+  return s;
+}
+
+function applyAttackEffect(s: GameState, attackerId: string, defenderId: string, effect: string): GameState {
+  const attacker = s.players[attackerId];
+  const defender = s.players[defenderId];
+  const eff = effect.toLowerCase();
+
+  // Self-damage
+  if (eff.includes("s'inflige 30")) {
+    if (attacker.active) {
+      attacker.active.currentHp = Math.max(0, attacker.active.currentHp - 30);
+      if (attacker.active.currentHp <= 0) s = handleKO(s, defenderId, attackerId);
+    }
+  } else if (eff.includes("s'inflige 20")) {
+    if (attacker.active) attacker.active.currentHp = Math.max(0, attacker.active.currentHp - 20);
+  } else if (eff.includes("s'inflige 10")) {
+    if (attacker.active) attacker.active.currentHp = Math.max(0, attacker.active.currentHp - 10);
+  }
+
+  // Self-heal
+  if (eff.includes('soignez 20 pv à ce joueur') || eff.includes('soignez 20 pv a ce joueur')) {
+    if (attacker.active) attacker.active.currentHp = Math.min(attacker.active.currentHp + 20, attacker.active.maxHp);
+  } else if (eff.includes('soignez 30 pv à ce joueur') || eff.includes('soignez 30 pv a ce joueur')) {
+    if (attacker.active) attacker.active.currentHp = Math.min(attacker.active.currentHp + 30, attacker.active.maxHp);
+  }
+
+  // Discard own endurance
+  if (eff.includes('défaussez 1 endurance attachée à ce joueur') || eff.includes('defaussez 1 endurance attachee a ce joueur')) {
+    if (attacker.active && attacker.active.attachedEndurance.length > 0) {
+      const disc = attacker.active.attachedEndurance.slice(-1);
+      attacker.active.attachedEndurance = attacker.active.attachedEndurance.slice(0, -1);
+      attacker.discard = [...attacker.discard, ...disc];
+    }
+  }
+
+  // Discard defender's endurance
+  if ((eff.includes('défaussez') || eff.includes('defaussez')) &&
+      (eff.includes('défenseur') || eff.includes('defenseur')) &&
+      eff.includes('endurance')) {
+    if (defender.active && defender.active.attachedEndurance.length > 0) {
+      const disc = defender.active.attachedEndurance.slice(-1);
+      defender.active.attachedEndurance = defender.active.attachedEndurance.slice(0, -1);
+      defender.discard = [...defender.discard, ...disc];
+    }
+  }
+
+  // Paralysis (from karlovic coin flip text mention)
+  if (eff.includes('paralysé') || eff.includes('paralyse')) {
+    if (defender.active && Math.random() > 0.5) {
+      defender.active.statusEffect = 'PARALYZED';
+    }
+  }
+
   return s;
 }
 
@@ -250,24 +284,28 @@ function handleAttack(s: GameState, action: GameAction): GameState {
   const attack = attacker.active!.attacks[attackIndex];
   let dmg = attack.damage;
   const defCard = defender.active!;
-  if (defCard.weakness === attacker.active!.element) dmg *= (defCard.weaknessMultiplier ?? 2);
-  if (defCard.resistance === attacker.active!.element) dmg = Math.max(0, dmg + (defCard.resistanceValue ?? -20));
-  // Surface bonus
-  if (s.activeSurface) {
-    const surfTemplate = getTemplate(s.activeSurface.templateId);
-    if (surfTemplate.effect) {
-      const [surfEffect, surfEl] = surfTemplate.effect.split(':');
-      if (surfEffect === 'BOOST_ELEMENT' && surfEl === attacker.active!.element) dmg += 10;
-    }
+  const attackerTags = attacker.active!.tags;
+
+  // Tag-based weakness/resistance
+  if (defCard.weakness && attackerTags.includes(defCard.weakness)) {
+    dmg = Math.round(dmg * 1.5);
   }
+  if (defCard.resistance && attackerTags.includes(defCard.resistance)) {
+    dmg = Math.max(0, dmg - 30);
+  }
+
   const consumed = attacker.active!.attachedEndurance.slice(0, attack.cost);
-  const leftoverEnergy = attacker.active!.attachedEndurance.slice(attack.cost);
-  s.players[attackerId].active!.attachedEndurance = leftoverEnergy;
+  const leftover = attacker.active!.attachedEndurance.slice(attack.cost);
+  s.players[attackerId].active!.attachedEndurance = leftover;
   s.players[attackerId].discard = [...s.players[attackerId].discard, ...consumed];
   s.players[attackerId].hasAttackedThisTurn = true;
   s.players[defenderId].active!.currentHp = Math.max(0, defCard.currentHp - dmg);
+
   if (attack.effect) s = applyAttackEffect(s, attackerId, defenderId, attack.effect);
-  if (s.players[defenderId].active!.currentHp <= 0) {
+
+  if (s.phase === 'GAME_OVER' || s.phase === 'PROMOTE') return s;
+
+  if (s.players[defenderId].active && s.players[defenderId].active!.currentHp <= 0) {
     s = handleKO(s, attackerId, defenderId);
   } else {
     s = endTurn(s, attackerId);
@@ -275,32 +313,16 @@ function handleAttack(s: GameState, action: GameAction): GameState {
   return s;
 }
 
-function applyAttackEffect(s: GameState, attackerId: string, defenderId: string, effect: string): GameState {
-  switch (effect) {
-    case 'POISON': if (s.players[defenderId].active) s.players[defenderId].active!.statusEffect = 'POISONED'; break;
-    case 'PARALYZE': if (s.players[defenderId].active) s.players[defenderId].active!.statusEffect = 'PARALYZED'; break;
-    case 'BURN': if (s.players[defenderId].active) s.players[defenderId].active!.statusEffect = 'BURNED'; break;
-    case 'DISCARD_ENERGY': {
-      const def = s.players[defenderId];
-      if (def.active && def.active.attachedEndurance.length > 0) {
-        const disc = def.active.attachedEndurance.slice(-1);
-        def.active.attachedEndurance = def.active.attachedEndurance.slice(0, -1);
-        def.discard = [...def.discard, ...disc];
-      }
-      break;
-    }
-    case 'DRAW_2': s.players[attackerId] = drawCards(s.players[attackerId], 2); break;
-  }
-  return s;
-}
-
 function handleKO(s: GameState, attackerId: string, defenderId: string): GameState {
   const def = s.players[defenderId];
   const koCard = def.active!;
-  const pts = koCard.type === CardType.PLAYER_STAGE2 ? 2 : 1;
-  s.players[defenderId] = { ...def, active: null, discard: [...def.discard, { ...koCard }, ...koCard.attachedEndurance] };
-  s.players[attackerId].score += pts;
-  s.lastEvent = `KO ! ${s.players[attackerId].pseudo} marque ${pts} point${pts > 1 ? 's' : ''} !`;
+  s.players[defenderId] = {
+    ...def,
+    active: null,
+    discard: [...def.discard, { ...koCard, attachedEndurance: [] as CardInstance[] }, ...koCard.attachedEndurance],
+  };
+  s.players[attackerId].score += 1;
+  s.lastEvent = `KO ! ${s.players[attackerId].pseudo} marque 1 point !`;
   if (s.players[attackerId].score >= 6) {
     s.phase = 'GAME_OVER';
     s.winnerId = attackerId;
@@ -321,7 +343,11 @@ function handlePromote(s: GameState, action: GameAction): GameState {
   const p = s.players[action.playerId];
   const bi = p.bench.findIndex(c => c.id === cardId);
   const newActive = { ...p.bench[bi], placedThisTurn: false };
-  s.players[action.playerId] = { ...p, active: newActive, bench: p.bench.filter((_, i) => i !== bi) };
+  s.players[action.playerId] = {
+    ...p,
+    active: newActive,
+    bench: p.bench.filter((_, i) => i !== bi),
+  };
   s.pendingPromotion = undefined;
   const attackerId = Object.keys(s.players).find(id => id !== action.playerId)!;
   s = endTurn(s, attackerId);
@@ -330,17 +356,22 @@ function handlePromote(s: GameState, action: GameAction): GameState {
 
 function endTurn(s: GameState, currentPlayerId: string): GameState {
   const opponentId = Object.keys(s.players).find(id => id !== currentPlayerId)!;
-  // Status effects
   for (const pid of Object.keys(s.players)) {
     const p = s.players[pid];
     const opp = Object.keys(s.players).find(id => id !== pid)!;
     if (p.active?.statusEffect === 'POISONED') {
       p.active.currentHp = Math.max(0, p.active.currentHp - 10);
-      if (p.active.currentHp <= 0) { s = handleKO(s, opp, pid); if (s.phase === 'GAME_OVER' || s.phase === 'PROMOTE') return s; }
+      if (p.active.currentHp <= 0) {
+        s = handleKO(s, opp, pid);
+        if (s.phase === 'GAME_OVER' || s.phase === 'PROMOTE') return s;
+      }
     }
     if (p.active?.statusEffect === 'BURNED') {
       p.active.currentHp = Math.max(0, p.active.currentHp - 20);
-      if (p.active.currentHp <= 0) { s = handleKO(s, opp, pid); if (s.phase === 'GAME_OVER' || s.phase === 'PROMOTE') return s; }
+      if (p.active.currentHp <= 0) {
+        s = handleKO(s, opp, pid);
+        if (s.phase === 'GAME_OVER' || s.phase === 'PROMOTE') return s;
+      }
     }
     if (p.active?.statusEffect === 'PARALYZED') p.active.statusEffect = null;
   }
