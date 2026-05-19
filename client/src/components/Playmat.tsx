@@ -108,7 +108,9 @@ export default function Playmat() {
   const canAttack = isMyTurn && myState.active && !myState.hasAttackedThisTurn && oppState.active;
   const isEnergy = selectedCard?.card.type === 'ENDURANCE';
   const isSelectedPlayer = selectedCard?.type === 'hand' && selectedCard.card.type === 'PLAYER';
+  const isSelectedStaff = selectedCard?.type === 'hand' && selectedCard.card.type === 'STAFF';
   const canPlayToBench = isSelectedPlayer && !!myState.active && myState.bench.length < 5;
+  const canPlayStaff = isSelectedStaff && !myState.hasPlayedStaffThisTurn;
 
   return (
     <div className="relative w-full h-full flex flex-col bg-gradient-to-b from-gray-900 via-gray-950 to-gray-900 overflow-hidden">
@@ -158,13 +160,19 @@ export default function Playmat() {
               {canPlayToBench && (
                 <button onClick={handleEmptyBenchSlotClick}
                   className="btn-secondary text-sm py-2 px-3 whitespace-nowrap text-green-300">
-                  + Jouer au Banc
+                  + Banc
+                </button>
+              )}
+              {canPlayStaff && (
+                <button onClick={() => { playCard(selectedCard!.card.id); selectCard(null); }}
+                  className="btn-secondary text-sm py-2 px-3 whitespace-nowrap text-cyan-300">
+                  ▶ Staff
                 </button>
               )}
               {isMyTurn && (
                 <button onClick={endTurn}
                   className="btn-secondary text-sm py-2 px-3 whitespace-nowrap">
-                  ⏭ Fin du tour
+                  ⏭ Fin
                 </button>
               )}
               {canRetreat && selectedCard?.type === 'bench' && (
@@ -198,9 +206,9 @@ export default function Playmat() {
                         px-4 py-2 rounded-xl text-xs font-semibold text-center
                         pointer-events-none max-w-xs">
           {selectedCard.card.type === 'ENDURANCE' && 'Cliquez sur un joueur (actif ou banc) pour attacher'}
-          {selectedCard.card.type === 'PLAYER' && 'Cliquez "Jouer au Banc" ou un slot vide du banc'}
-          {selectedCard.card.type === 'STAFF' && 'Carte Staff — cliquez pour jouer'}
-          {selectedCard.type === 'bench' && 'Sélectionné — cliquez "↩ Retirer" pour remplacer l\'actif'}
+          {selectedCard.card.type === 'PLAYER' && 'Cliquez "+ Banc" ou un emplacement vide'}
+          {selectedCard.card.type === 'STAFF' && 'Cliquez "▶ Staff" pour jouer cette carte'}
+          {selectedCard.type === 'bench' && 'Sélectionné — cliquez "↩ Retirer" pour changer l\'actif'}
           {selectedCard.type === 'active' && 'Joueur actif — cliquez "⚔️ Attaquer"'}
         </div>
       )}
