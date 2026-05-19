@@ -1,0 +1,34 @@
+# Placez vos illustrations WebP dans ce dossier.
+# Nommez-les exactement comme dans cards.json :
+#   nadal_base.webp, nadal_stage1.webp, nadal_stage2.webp
+#   djokovic_base.webp, djokovic_stage1.webp, djokovic_stage2.webp
+#   federer_base.webp, federer_stage1.webp, federer_stage2.webp
+#   serena_base.webp, serena_stage1.webp, serena_stage2.webp
+#   alcaraz_base.webp, alcaraz_stage1.webp, alcaraz_stage2.webp
+#   sinner_base.webp, sinner_stage1.webp, sinner_stage2.webp
+#   sampras_base.webp, sampras_stage1.webp, sampras_stage2.webp
+#   agassi_base.webp, agassi_stage1.webp, agassi_stage2.webp
+#   swiatek_base.webp, swiatek_stage1.webp, swiatek_stage2.webp
+#   murray_base.webp, murray_stage1.webp, murray_stage2.webp
+#   wawrinka_base.webp, wawrinka_stage1.webp, wawrinka_stage2.webp
+#   becker_base.webp, becker_stage1.webp, becker_stage2.webp
+#   edberg_base.webp, edberg_stage1.webp
+#   lendl_base.webp, lendl_stage1.webp, lendl_stage2.webp
+#   mcenroe_base.webp, mcenroe_stage1.webp, mcenroe_stage2.webp
+#   connors_base.webp, borg_base.webp, navratilova_base.webp
+#   sharapova_base.webp, venus_base.webp
+#   medvedev_base.webp, zverev_base.webp, tsitsipas_base.webp
+#   sabalenka_base.webp, gauff_base.webp
+#
+# Energies : energy_terre.webp, energy_feu.webp, energy_eau.webp,
+#            energy_air.webp, energy_mental.webp, energy_foudre.webp,
+#            energy_nature.webp, energy_neutre.webp
+#
+# Staff : staff_kiné.webp, staff_sponsor.webp, staff_coach.webp,
+#         staff_medecin.webp, staff_physio.webp
+#
+# Equipements : equip_raquette.webp, equip_bandeau.webp, equip_balles.webp
+#
+# Surfaces : surface_rg.webp, surface_wimbledon.webp
+#
+# Dos de carte : card_back.webp
