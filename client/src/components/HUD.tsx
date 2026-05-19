@@ -46,8 +46,8 @@ export default function HUD() {
         }`}>
           {isMyTurn ? '▶ Votre tour' : `⏳ ${gameState.players[gameState.activePlayerId]?.pseudo}`}
         </span>
-        {gameState.activeSurface && (
-          <span className="text-[9px] text-cyan-400">🏟️ {gameState.activeSurface.name}</span>
+        {gameState.lastEvent && (
+          <span className="text-[9px] text-cyan-400 max-w-[200px] truncate">{gameState.lastEvent}</span>
         )}
       </div>
 

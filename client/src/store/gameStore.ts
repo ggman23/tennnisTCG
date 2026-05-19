@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { GameState, DeckInfo, CardInstance, PlayerCardInstance } from '../types/game';
+import { GameState, DeckInfo, CardInstance } from '../types/game';
 
 type Screen = 'home' | 'waiting' | 'setup' | 'game' | 'gameover';
 
@@ -10,25 +10,20 @@ interface Selection {
 }
 
 interface GameStore {
-  // Connection
   pseudo: string;
   selectedDeckId: string;
   myPlayerId: string | null;
   roomId: string | null;
-  // UI state
   screen: Screen;
   gameState: GameState | null;
   decks: DeckInfo[];
   errorMsg: string | null;
   lastEvent: string | null;
-  // Interaction
   selectedCard: Selection | null;
   attackModalOpen: boolean;
-  // Computed helpers
   myState: () => import('../types/game').PlayerState | null;
   oppState: () => import('../types/game').PlayerState | null;
   isMyTurn: () => boolean;
-  // Actions
   setPseudo: (p: string) => void;
   setSelectedDeckId: (id: string) => void;
   setMyPlayerId: (id: string) => void;
@@ -46,7 +41,7 @@ interface GameStore {
 
 export const useGameStore = create<GameStore>((set, get) => ({
   pseudo: '',
-  selectedDeckId: 'roi_de_la_terre',
+  selectedDeckId: 'legendes_terre_battue',
   myPlayerId: null,
   roomId: null,
   screen: 'home',
