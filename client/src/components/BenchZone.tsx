@@ -8,11 +8,14 @@ interface BenchZoneProps {
   isOpponent?: boolean;
   selectedId?: string;
   onCardClick?: (card: PlayerCardInstance, idx: number) => void;
+  onEmptySlotClick?: () => void;
   canDropEnergy?: boolean;
-  energyDropTargetId?: string;
+  canDropPlayer?: boolean;
 }
 
-export default function BenchZone({ bench, isOpponent, selectedId, onCardClick, canDropEnergy, energyDropTargetId }: BenchZoneProps) {
+export default function BenchZone({
+  bench, isOpponent, selectedId, onCardClick, onEmptySlotClick, canDropEnergy, canDropPlayer,
+}: BenchZoneProps) {
   const slots = 5;
   return (
     <div className="flex items-center justify-center gap-2">
@@ -20,7 +23,6 @@ export default function BenchZone({ bench, isOpponent, selectedId, onCardClick, 
         {Array.from({ length: slots }).map((_, i) => {
           const card = bench[i] ?? null;
           const isSelected = card ? card.id === selectedId : false;
-          const canDrop = canDropEnergy && !!card;
           return (
             <motion.div
               key={i}
@@ -31,11 +33,25 @@ export default function BenchZone({ bench, isOpponent, selectedId, onCardClick, 
             >
               {card ? (
                 <Card card={card} size="sm"
-                  selected={isSelected || (canDrop && card.id === energyDropTargetId)}
+                  selected={isSelected}
                   onClick={() => onCardClick?.(card, i)}
                 />
               ) : (
-                <div className="w-20 h-28 rounded-xl border-2 border-dashed border-white/10 bg-white/2" />
+                <div
+                  onClick={() => !isOpponent && onEmptySlotClick?.()}
+                  className={[
+                    'w-20 h-28 rounded-xl border-2 border-dashed transition-all duration-150',
+                    !isOpponent && canDropPlayer
+                      ? 'border-green-400/60 bg-green-400/10 cursor-pointer hover:bg-green-400/20'
+                      : 'border-white/10 bg-white/2',
+                  ].join(' ')}
+                >
+                  {!isOpponent && canDropPlayer && (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-green-400/60 text-xs">+</span>
+                    </div>
+                  )}
+                </div>
               )}
             </motion.div>
           );
