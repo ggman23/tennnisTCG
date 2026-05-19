@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useGameStore } from '../store/gameStore';
 import { useGameSocket } from '../hooks/useGame';
 import Card from './Card';
-import { CardInstance, PlayerCardInstance } from '../types/game';
 
 export default function SetupScreen() {
   const myState = useGameStore(s => s.myState());
@@ -15,7 +14,7 @@ export default function SetupScreen() {
   if (!myState) return null;
 
   const hand = myState.hand;
-  const baseCards = hand.filter(c => c.type === 'PLAYER_BASE');
+  const playerCards = hand.filter(c => c.type === 'PLAYER');
 
   const toggleBench = (id: string) => {
     if (id === activeCardId) return;
@@ -49,18 +48,18 @@ export default function SetupScreen() {
       {!isReady ? (
         <>
           <div className="text-center text-gray-400 text-sm">
-            <p className="font-semibold text-white mb-1">Choisissez votre joueur Actif (obligatoire)</p>
+            <p className="font-semibold text-white mb-1">Choisissez votre Légende Active (obligatoire)</p>
             <p>Puis sélectionnez jusqu'à 5 joueurs pour votre Banc (optionnel)</p>
           </div>
 
-          {baseCards.length === 0 && (
-            <p className="text-red-400 text-sm">Aucune carte joueur Base dans votre main !</p>
+          {playerCards.length === 0 && (
+            <p className="text-red-400 text-sm">Aucune carte joueur dans votre main !</p>
           )}
 
           <div className="flex flex-wrap justify-center gap-3 max-w-2xl">
             <AnimatePresence>
               {hand.map(card => {
-                const isBase = card.type === 'PLAYER_BASE';
+                const isPlayer = card.type === 'PLAYER';
                 const isActive = card.id === activeCardId;
                 const isBench = benchCardIds.includes(card.id);
                 return (
@@ -69,9 +68,9 @@ export default function SetupScreen() {
                     className="relative">
                     <Card card={card} size="md"
                       selected={isActive || isBench}
-                      dimmed={!isBase}
+                      dimmed={!isPlayer}
                       onClick={() => {
-                        if (!isBase) return;
+                        if (!isPlayer) return;
                         if (isActive) { setActiveCardId(null); }
                         else if (isBench) { toggleBench(card.id); }
                         else if (!activeCardId) { setActiveCardId(card.id); }

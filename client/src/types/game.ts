@@ -1,17 +1,18 @@
-// Mirrors server types - single source of truth for the client
-export type CardType = 'PLAYER_BASE' | 'PLAYER_STAGE1' | 'PLAYER_STAGE2' | 'ENDURANCE' | 'STAFF' | 'EQUIPMENT' | 'SURFACE' | 'HIDDEN';
-export type Archetype = 'AGGRO' | 'TANK' | 'MOTEUR' | 'DISRUPTEUR';
-export type Element = 'TERRE' | 'FEU' | 'EAU' | 'AIR' | 'MENTAL' | 'FOUDRE' | 'NATURE' | 'NEUTRE';
+// Mirrors server types
+export type CardType = 'PLAYER' | 'ENDURANCE' | 'STAFF' | 'HIDDEN';
 export type StatusEffect = 'PARALYZED' | 'POISONED' | 'BURNED' | null;
 export type GamePhase = 'WAITING' | 'SETUP' | 'MAIN' | 'PROMOTE' | 'GAME_OVER';
+
+export interface SpecialAbility {
+  name: string;
+  description: string;
+}
 
 export interface Attack {
   name: string;
   cost: number;
-  costTypes: Element[];
   damage: number;
   effect?: string;
-  effectDescription?: string;
 }
 
 export interface CardInstance {
@@ -20,26 +21,20 @@ export interface CardInstance {
   type: CardType;
   name: string;
   artworkPath: string;
-  element?: Element;
-  secondaryElement?: Element;
 }
 
 export interface PlayerCardInstance extends CardInstance {
   maxHp: number;
   currentHp: number;
-  archetype: Archetype;
+  tags: string[];
+  specialAbility?: SpecialAbility;
   attacks: Attack[];
   retreatCost: number;
-  weakness?: Element;
-  weaknessMultiplier?: number;
-  resistance?: Element;
-  resistanceValue?: number;
-  evolvesFrom?: string;
+  weakness?: string;
+  resistance?: string;
   attachedEndurance: CardInstance[];
   placedThisTurn: boolean;
   statusEffect: StatusEffect;
-  setNumber?: string;
-  flavorText?: string;
 }
 
 export interface PlayerState {
@@ -68,7 +63,6 @@ export interface GameState {
   playerOrder: string[];
   winnerId?: string;
   lastEvent?: string;
-  activeSurface?: CardInstance;
   pendingPromotion?: string;
 }
 

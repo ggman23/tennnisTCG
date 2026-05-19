@@ -24,7 +24,6 @@ export function useGameSocket() {
       store.setGameState(payload.state);
       const gs = payload.state;
       if (gs.phase === 'GAME_OVER') store.setScreen('gameover');
-      // If setup is done, show game board
       if (gs.phase === 'MAIN' || gs.phase === 'PROMOTE') {
         if (store.screen === 'setup') store.setScreen('game');
       }
@@ -40,7 +39,7 @@ export function useGameSocket() {
     });
 
     socket.on('opponent_disconnected', () => {
-      store.setError('Votre adversaire s\'est déconnecté !');
+      store.setError("Votre adversaire s'est déconnecté !");
       store.setScreen('gameover');
     });
 
@@ -70,10 +69,6 @@ export function useGameSocket() {
     sendAction('ATTACH_ENDURANCE', { energyCardId, targetId });
   }, []);
 
-  const evolve = useCallback((evolveCardId: string, targetId: string) => {
-    sendAction('EVOLVE', { evolveCardId, targetId });
-  }, []);
-
   const retreat = useCallback((newActiveId: string) => {
     sendAction('RETREAT', { newActiveId });
   }, []);
@@ -90,5 +85,5 @@ export function useGameSocket() {
     sendAction('PROMOTE_ACTIVE', { cardId });
   }, []);
 
-  return { joinLobby, ready, playCard, attachEndurance, evolve, retreat, attack, endTurn, promoteActive };
+  return { joinLobby, ready, playCard, attachEndurance, retreat, attack, endTurn, promoteActive };
 }

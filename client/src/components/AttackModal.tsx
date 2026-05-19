@@ -24,8 +24,7 @@ export default function AttackModal() {
       {open && (
         <motion.div
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-          className="absolute inset-0 z-50 flex items-center justify-center
-                     bg-black/70 backdrop-blur-sm"
+          className="absolute inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
           onClick={close}
         >
           <motion.div
@@ -34,30 +33,39 @@ export default function AttackModal() {
             onClick={e => e.stopPropagation()}
           >
             <h3 className="text-xl font-bold text-yellow-300 mb-1">Choisir une attaque</h3>
+            {pc.specialAbility && (
+              <div className="mb-3 p-2 bg-yellow-900/30 border border-yellow-600/20 rounded-lg">
+                <p className="text-xs font-bold text-yellow-400">★ {pc.specialAbility.name}</p>
+                <p className="text-xs text-yellow-200/70 mt-0.5">{pc.specialAbility.description}</p>
+              </div>
+            )}
             <p className="text-sm text-gray-400 mb-4">
-              {pc.name} — {energyCount} Endurance attachée{energyCount > 1 ? 's' : ''}
+              {pc.name} — {energyCount} Endurance{energyCount > 1 ? 's' : ''}
             </p>
             <div className="flex flex-col gap-3">
               {pc.attacks.map((atk: Attack, i: number) => {
                 const canUse = energyCount >= atk.cost;
                 return (
                   <button key={i} onClick={() => canUse && handleAttack(i)}
-                    className={`flex items-center justify-between p-4 rounded-xl border
-                               text-left transition-all duration-150 ${
-                                 canUse
-                                  ? 'border-yellow-400/40 bg-yellow-900/20 hover:bg-yellow-900/40 cursor-pointer'
-                                  : 'border-gray-700 bg-gray-800/50 opacity-50 cursor-not-allowed'
-                               }`}>
-                    <div>
-                      <p className="font-bold text-white">{atk.name}</p>
-                      <p className="text-xs text-gray-400 mt-0.5">
-                        Coût : {'●'.repeat(atk.cost)} ({atk.cost} Endurance)
-                      </p>
-                      {atk.effectDescription && (
-                        <p className="text-xs text-cyan-400 mt-0.5">{atk.effectDescription}</p>
-                      )}
+                    className={`flex flex-col p-4 rounded-xl border text-left transition-all duration-150 ${
+                      canUse
+                        ? 'border-yellow-400/40 bg-yellow-900/20 hover:bg-yellow-900/40 cursor-pointer'
+                        : 'border-gray-700 bg-gray-800/50 opacity-50 cursor-not-allowed'
+                    }`}>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-bold text-white">{atk.name}</p>
+                        <p className="text-xs text-gray-400 mt-0.5">
+                          Coût : {'●'.repeat(atk.cost)} ({atk.cost} Endurance)
+                        </p>
+                      </div>
+                      <div className="text-3xl font-black text-white ml-4">{atk.damage}</div>
                     </div>
-                    <div className="text-3xl font-black text-white ml-4">{atk.damage}</div>
+                    {atk.effect && (
+                      <p className="text-xs text-cyan-300/80 mt-1.5 border-t border-white/10 pt-1.5">
+                        {atk.effect}
+                      </p>
+                    )}
                   </button>
                 );
               })}
