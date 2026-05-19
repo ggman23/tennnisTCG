@@ -1,34 +1,111 @@
-# Placez vos illustrations WebP dans ce dossier.
-# Nommez-les exactement comme dans cards.json :
-#   nadal_base.webp, nadal_stage1.webp, nadal_stage2.webp
-#   djokovic_base.webp, djokovic_stage1.webp, djokovic_stage2.webp
-#   federer_base.webp, federer_stage1.webp, federer_stage2.webp
-#   serena_base.webp, serena_stage1.webp, serena_stage2.webp
-#   alcaraz_base.webp, alcaraz_stage1.webp, alcaraz_stage2.webp
-#   sinner_base.webp, sinner_stage1.webp, sinner_stage2.webp
-#   sampras_base.webp, sampras_stage1.webp, sampras_stage2.webp
-#   agassi_base.webp, agassi_stage1.webp, agassi_stage2.webp
-#   swiatek_base.webp, swiatek_stage1.webp, swiatek_stage2.webp
-#   murray_base.webp, murray_stage1.webp, murray_stage2.webp
-#   wawrinka_base.webp, wawrinka_stage1.webp, wawrinka_stage2.webp
-#   becker_base.webp, becker_stage1.webp, becker_stage2.webp
-#   edberg_base.webp, edberg_stage1.webp
-#   lendl_base.webp, lendl_stage1.webp, lendl_stage2.webp
-#   mcenroe_base.webp, mcenroe_stage1.webp, mcenroe_stage2.webp
-#   connors_base.webp, borg_base.webp, navratilova_base.webp
-#   sharapova_base.webp, venus_base.webp
-#   medvedev_base.webp, zverev_base.webp, tsitsipas_base.webp
-#   sabalenka_base.webp, gauff_base.webp
-#
-# Energies : energy_terre.webp, energy_feu.webp, energy_eau.webp,
-#            energy_air.webp, energy_mental.webp, energy_foudre.webp,
-#            energy_nature.webp, energy_neutre.webp
-#
-# Staff : staff_kiné.webp, staff_sponsor.webp, staff_coach.webp,
-#         staff_medecin.webp, staff_physio.webp
-#
-# Equipements : equip_raquette.webp, equip_bandeau.webp, equip_balles.webp
-#
-# Surfaces : surface_rg.webp, surface_wimbledon.webp
-#
-# Dos de carte : card_back.webp
+# Place your .webp artwork files here
+# One file per line
+
+# Player cards (100 total):
+nadal_001.webp
+djokovic_002.webp
+federer_003.webp
+agassi_004.webp
+sampras_005.webp
+mcenroe_006.webp
+connors_007.webp
+lendl_008.webp
+becker_009.webp
+edberg_010.webp
+wilander_011.webp
+laver_012.webp
+sinner_013.webp
+alcaraz_014.webp
+courier_015.webp
+murray_016.webp
+wawrinka_017.webp
+kuerten_018.webp
+emerson_019.webp
+perry_020.webp
+rosewall_021.webp
+hewitt_022.webp
+graf_023.webp
+navratilova_024.webp
+williams_s_025.webp
+evert_026.webp
+hingis_027.webp
+seles_028.webp
+swiatek_029.webp
+barty_030.webp
+henin_031.webp
+davenport_032.webp
+sabalenka_033.webp
+sharapova_034.webp
+clijsters_035.webp
+smith_court_036.webp
+king_037.webp
+lenglen_038.webp
+williams_v_039.webp
+nastase_040.webp
+medvedev_042.webp
+roddick_043.webp
+safin_044.webp
+ferrero_045.webp
+newcombe_046.webp
+kafelnikov_047.webp
+muster_048.webp
+rios_049.webp
+moya_050.webp
+rafter_051.webp
+wozniacki_052.webp
+halep_053.webp
+azarenka_054.webp
+mauresmo_055.webp
+kerber_056.webp
+safina_057.webp
+osaka_058.webp
+capriati_059.webp
+noah_060.webp
+leconte_061.webp
+lacoste_062.webp
+monfils_063.webp
+gasquet_064.webp
+tsonga_065.webp
+santoro_066.webp
+simon_067.webp
+forget_068.webp
+pioline_069.webp
+llodra_070.webp
+mathieu_071.webp
+clement_072.webp
+mahut_073.webp
+grosjean_074.webp
+moutet_075.webp
+paire_076.webp
+tilden_077.webp
+vilas_078.webp
+ashe_079.webp
+bruguera_080.webp
+stan_smith_081.webp
+del_potro_082.webp
+ivanisevic_083.webp
+chang_084.webp
+stich_085.webp
+cash_086.webp
+ferrer_087.webp
+berdych_088.webp
+isner_089.webp
+karlovic_090.webp
+zverev_091.webp
+nalbandian_092.webp
+soderling_093.webp
+davydenko_094.webp
+coria_095.webp
+gonzalez_096.webp
+krajicek_097.webp
+lopez_098.webp
+cilic_099.webp
+sanchez_vicario_100.webp
+austin_101.webp
+
+# Support cards:
+endurance.webp
+staff_coach.webp
+staff_kine.webp
+staff_sponsor.webp
+card_back.webp
