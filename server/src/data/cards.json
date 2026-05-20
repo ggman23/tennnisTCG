@@ -1,1 +1,33 @@
-__PLACEHOLDER__
+[
+  {
+    "templateId": "nadal_001",
+    "type": "PLAYER",
+    "name": "Rafael Nadal",
+    "artworkPath": "/artworks/nadal_001.webp",
+    "tags": [
+      "Terre Battue",
+      "Fond de court",
+      "Gaucher"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Mental d'Acier",
+      "description": "Une fois par tour, réduisez les dégâts de la prochaine attaque subie de 30."
+    },
+    "attacks": [
+      {
+        "name": "Coup Droit Foudroyant",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Roi de la Terre Battue",
+        "cost": 4,
+        "damage": 150,
+        "effect": "Défaussez 1 Endurance attachée à ce joueur."
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  }]
