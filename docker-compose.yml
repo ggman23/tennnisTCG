@@ -34,4 +34,5 @@ services:
 
 networks:
   default:
-    name: tennistcg-net
+    name: nginx-proxy-manager_default
+    external: true
