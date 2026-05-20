@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useGameStore } from '../store/gameStore';
-import { useGameSocket } from '../hooks/useGame';
+import { sendAction } from '../socket/socket';
 import Card from './Card';
 
 export default function SetupScreen() {
   const myState = useGameStore(s => s.myState());
   const oppState = useGameStore(s => s.oppState());
-  const { ready } = useGameSocket();
   const [activeCardId, setActiveCardId] = useState<string | null>(null);
   const [benchCardIds, setBenchCardIds] = useState<string[]>([]);
 
@@ -26,7 +25,7 @@ export default function SetupScreen() {
 
   const handleReady = () => {
     if (!activeCardId) return;
-    ready(activeCardId, benchCardIds);
+    sendAction('READY', { activeCardId, benchCardIds });
   };
 
   const isReady = myState.isReady;

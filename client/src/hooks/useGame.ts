@@ -25,7 +25,7 @@ export function useGameSocket() {
       const gs = payload.state;
       if (gs.phase === 'GAME_OVER') store.setScreen('gameover');
       if (gs.phase === 'MAIN' || gs.phase === 'PROMOTE') {
-        if (store.screen === 'setup') store.setScreen('game');
+        if (useGameStore.getState().screen === 'setup') store.setScreen('game');
       }
     });
 
