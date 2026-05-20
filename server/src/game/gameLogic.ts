@@ -319,7 +319,7 @@ function handleKO(s: GameState, attackerId: string, defenderId: string): GameSta
   s.players[defenderId] = {
     ...def,
     active: null,
-    discard: [...def.discard, { ...koCard, attachedEndurance: [] as CardInstance[] }, ...koCard.attachedEndurance],
+    discard: [...def.discard, { ...koCard, attachedEndurance: [] } as PlayerCardInstance, ...koCard.attachedEndurance],
   };
   s.players[attackerId].score += 1;
   s.lastEvent = `KO ! ${s.players[attackerId].pseudo} marque 1 point !`;

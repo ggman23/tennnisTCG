@@ -4,7 +4,7 @@ import { Server, Socket } from 'socket.io';
 import cors from 'cors';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
-import { GameState, ActionType, GameAction } from './game/types';
+import { GameState, ActionType, GameAction, CardType } from './game/types';
 import { createGameState, processAction } from './game/gameLogic';
 import { getAvailableDecks } from './data/cardRegistry';
 
@@ -160,7 +160,7 @@ function sanitize(state: GameState, viewerId: string): GameState {
       const hidden = {
         id: 'hidden',
         templateId: 'card_back',
-        type: 'HIDDEN' as const,
+        type: CardType.HIDDEN,
         name: '?',
         artworkPath: '/artworks/card_back.webp',
       };
