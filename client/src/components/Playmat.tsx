@@ -50,6 +50,11 @@ export default function Playmat() {
     prevHp.current = cur;
   }, [gameState]);
 
+  const showError = (msg: string) => {
+    useGameStore.getState().setError(msg);
+    setTimeout(() => useGameStore.getState().setError(null), 2500);
+  };
+
   const handleHandCardClick = (card: CardInstance) => {
     if (!isMyTurn) return;
     if (selectedCard?.card.id === card.id) { selectCard(null); return; }
@@ -62,7 +67,12 @@ export default function Playmat() {
     const sel = selectedCard;
     if (!sel) return;
     const card = sel.card;
-    if (card.type === 'ENDURANCE' && myState.active && !myState.hasAttachedEnduranceThisTurn) {
+    if (card.type === 'ENDURANCE' && myState.active) {
+      if (myState.hasAttachedEnduranceThisTurn) {
+        showError('1 seule Endurance par tour — attendez votre prochain tour');
+        selectCard(null);
+        return;
+      }
       attachEndurance(card.id, myState.active.id);
       selectCard(null);
       return;
@@ -80,7 +90,12 @@ export default function Playmat() {
     const sel = selectedCard;
     if (sel) {
       const c = sel.card;
-      if (c.type === 'ENDURANCE' && !myState.hasAttachedEnduranceThisTurn) {
+      if (c.type === 'ENDURANCE') {
+        if (myState.hasAttachedEnduranceThisTurn) {
+          showError('1 seule Endurance par tour — attendez votre prochain tour');
+          selectCard(null);
+          return;
+        }
         attachEndurance(c.id, card.id);
         selectCard(null);
         return;
@@ -213,7 +228,11 @@ export default function Playmat() {
                         bg-gray-900/90 border border-white/20 text-white
                         px-4 py-2 rounded-xl text-xs font-semibold text-center
                         pointer-events-none max-w-xs">
-          {selectedCard.card.type === 'ENDURANCE' && 'Cliquez sur un joueur (actif ou banc) pour attacher'}
+          {selectedCard.card.type === 'ENDURANCE' && (
+            myState.hasAttachedEnduranceThisTurn
+              ? '⚠️ Déjà 1 Endurance ce tour — finissez votre tour d\'abord'
+              : 'Cliquez sur un joueur (actif ou banc) pour attacher'
+          )}
           {selectedCard.card.type === 'PLAYER' && 'Cliquez "+ Banc" ou un emplacement vide'}
           {selectedCard.card.type === 'STAFF' && 'Cliquez "▶ Staff" pour jouer cette carte'}
           {selectedCard.type === 'bench' && 'Sélectionné — cliquez "↩ Retirer" pour changer l\'actif'}
