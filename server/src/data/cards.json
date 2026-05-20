@@ -1,1 +1,3205 @@
-[]
+[
+  {
+    "templateId": "nadal_001",
+    "type": "PLAYER",
+    "name": "Rafael Nadal",
+    "artworkPath": "/artworks/nadal_001.webp",
+    "tags": [
+      "Terre Battue",
+      "Fond de court",
+      "Gaucher"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Mental d'Acier",
+      "description": "Une fois par tour, réduisez les dégâts de la prochaine attaque subie de 30."
+    },
+    "attacks": [
+      {
+        "name": "Coup Droit Foudroyant",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Roi de la Terre Battue",
+        "cost": 4,
+        "damage": 150,
+        "effect": "Défaussez 1 Endurance attachée à ce joueur."
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "djokovic_002",
+    "type": "PLAYER",
+    "name": "Novak Djokovic",
+    "artworkPath": "/artworks/djokovic_002.webp",
+    "tags": [
+      "Dur",
+      "Relanceur",
+      "Tactique"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Volonté de Fer",
+      "description": "Ce joueur ne peut pas subir d'effets de statut (Paralysie, Confusion, etc.)."
+    },
+    "attacks": [
+      {
+        "name": "Retour Implacable",
+        "cost": 2,
+        "damage": 40,
+        "effect": "L'adversaire doit échanger son joueur actif avec un joueur de son banc."
+      },
+      {
+        "name": "Maître des Grands Chelems",
+        "cost": 4,
+        "damage": 130
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "federer_003",
+    "type": "PLAYER",
+    "name": "Roger Federer",
+    "artworkPath": "/artworks/federer_003.webp",
+    "tags": [
+      "Gazon",
+      "Offensif",
+      "Élégance"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Grâce Suisse",
+      "description": "Le coût de retraite de ce joueur est réduit de 1."
+    },
+    "attacks": [
+      {
+        "name": "Service Royal",
+        "cost": 1,
+        "damage": 30
+      },
+      {
+        "name": "Maître du Gazon",
+        "cost": 3,
+        "damage": 120
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "agassi_004",
+    "type": "PLAYER",
+    "name": "Andre Agassi",
+    "artworkPath": "/artworks/agassi_004.webp",
+    "tags": [
+      "Dur",
+      "Fond de court",
+      "Showman"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Retour de Légende",
+      "description": "Si ce joueur a été placé sur le terrain ce tour-ci, ses attaques infligent +20 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Retour Explosif",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Roi du Hard Court",
+        "cost": 3,
+        "damage": 110
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Gazon",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "sampras_005",
+    "type": "PLAYER",
+    "name": "Pete Sampras",
+    "artworkPath": "/artworks/sampras_005.webp",
+    "tags": [
+      "Gazon",
+      "Service-Volée"
+    ],
+    "maxHp": 150,
+    "specialAbility": {
+      "name": "Sang-Froid de Champion",
+      "description": "Si ce joueur a tous ses PV, ses attaques infligent +30 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Service Canon",
+        "cost": 2,
+        "damage": 70
+      },
+      {
+        "name": "Maître du Serve-et-Volée",
+        "cost": 4,
+        "damage": 140
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "mcenroe_006",
+    "type": "PLAYER",
+    "name": "John McEnroe",
+    "artworkPath": "/artworks/mcenroe_006.webp",
+    "tags": [
+      "Gazon",
+      "Service-Volée",
+      "Gaucher"
+    ],
+    "maxHp": 140,
+    "specialAbility": {
+      "name": "You Cannot Be Serious",
+      "description": "Une fois par partie, vous pouvez annuler une carte 'Staff' jouée par votre adversaire."
+    },
+    "attacks": [
+      {
+        "name": "Volée Fulgurante",
+        "cost": 1,
+        "damage": 40
+      },
+      {
+        "name": "Génie Incontrôlable",
+        "cost": 3,
+        "damage": 100,
+        "effect": "Lancez une pièce. Si c'est pile, cette attaque ne fait rien."
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "connors_007",
+    "type": "PLAYER",
+    "name": "Jimmy Connors",
+    "artworkPath": "/artworks/connors_007.webp",
+    "tags": [
+      "Dur",
+      "Fond de court",
+      "Gaucher"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Mental de Guerrier",
+      "description": "Tant qu'il reste moins de 50 PV à ce joueur, ses attaques coûtent 1 Endurance de moins."
+    },
+    "attacks": [
+      {
+        "name": "Retour Ravageur",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Combattant Inusable",
+        "cost": 4,
+        "damage": 120
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Gazon",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "lendl_008",
+    "type": "PLAYER",
+    "name": "Ivan Lendl",
+    "artworkPath": "/artworks/lendl_008.webp",
+    "tags": [
+      "Dur",
+      "Fond de court"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Précision Implacable",
+      "description": "Les attaques de ce joueur ne sont pas affectées par les résistances de l'adversaire."
+    },
+    "attacks": [
+      {
+        "name": "Frappe Mécanique",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Domination du Fond",
+        "cost": 4,
+        "damage": 130
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Gazon",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "becker_009",
+    "type": "PLAYER",
+    "name": "Boris Becker",
+    "artworkPath": "/artworks/becker_009.webp",
+    "tags": [
+      "Gazon",
+      "Service-Volée",
+      "Puissance"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Rage de Champion",
+      "description": "Si ce joueur met K.O. un adversaire, soignez-le de 30 PV."
+    },
+    "attacks": [
+      {
+        "name": "Service Tonnerre",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Plongeon Légendaire",
+        "cost": 4,
+        "damage": 150,
+        "effect": "Ce joueur s'inflige 30 dégâts à lui-même."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "edberg_010",
+    "type": "PLAYER",
+    "name": "Stefan Edberg",
+    "artworkPath": "/artworks/edberg_010.webp",
+    "tags": [
+      "Gazon",
+      "Service-Volée",
+      "Élégance"
+    ],
+    "maxHp": 150,
+    "specialAbility": {
+      "name": "Grâce Suédoise",
+      "description": "Quand ce joueur bat en retraite, déplacez ses cartes Endurance vers le nouveau joueur actif au lieu de les défausser."
+    },
+    "attacks": [
+      {
+        "name": "Volée Royale",
+        "cost": 1,
+        "damage": 30
+      },
+      {
+        "name": "Serve-et-Volée Parfait",
+        "cost": 3,
+        "damage": 90
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "wilander_011",
+    "type": "PLAYER",
+    "name": "Mats Wilander",
+    "artworkPath": "/artworks/wilander_011.webp",
+    "tags": [
+      "Terre Battue",
+      "Tacticien",
+      "Fond de court"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Patience Tactique",
+      "description": "À la fin de votre tour, si ce joueur n'a pas attaqué, soignez-lui 30 PV."
+    },
+    "attacks": [
+      {
+        "name": "Échange Méthodique",
+        "cost": 2,
+        "damage": 40,
+        "effect": "Regardez la main de votre adversaire."
+      },
+      {
+        "name": "Maître du Contre-Pied",
+        "cost": 3,
+        "damage": 100,
+        "effect": "Le coût de retraite du joueur Défenseur est augmenté de 2 au prochain tour."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "laver_012",
+    "type": "PLAYER",
+    "name": "Rod Laver",
+    "artworkPath": "/artworks/laver_012.webp",
+    "tags": [
+      "Gazon",
+      "Légende",
+      "Gaucher"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Légende du Grand Chelem",
+      "description": "Les attaques de ce joueur coûtent 1 Endurance de moins pour chaque carte 'Surface' (Stade) en jeu."
+    },
+    "attacks": [
+      {
+        "name": "Lift Doré",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Gaucher Mythique",
+        "cost": 4,
+        "damage": 140
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "sinner_013",
+    "type": "PLAYER",
+    "name": "Jannik Sinner",
+    "artworkPath": "/artworks/sinner_013.webp",
+    "tags": [
+      "Dur",
+      "Fond de court",
+      "Puissance"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Sang-Froid Moderne",
+      "description": "Ce joueur ignore les effets des cartes 'Stade' qui l'handicapent."
+    },
+    "attacks": [
+      {
+        "name": "Frappe Laser",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Tempête du Fond du Court",
+        "cost": 4,
+        "damage": 130
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "alcaraz_014",
+    "type": "PLAYER",
+    "name": "Carlos Alcaraz",
+    "artworkPath": "/artworks/alcaraz_014.webp",
+    "tags": [
+      "Terre Battue",
+      "Vitesse",
+      "Créativité"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Énergie Inarrêtable",
+      "description": "Une fois par tour, vous pouvez attacher 1 Endurance supplémentaire à ce joueur s'il est sur votre Banc."
+    },
+    "attacks": [
+      {
+        "name": "Amortie Éclair",
+        "cost": 1,
+        "damage": 30,
+        "effect": "Le joueur Défenseur ne peut pas battre en retraite lors de son prochain tour."
+      },
+      {
+        "name": "Furie d'Alcaraz",
+        "cost": 3,
+        "damage": 120
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "courier_015",
+    "type": "PLAYER",
+    "name": "Jim Courier",
+    "artworkPath": "/artworks/courier_015.webp",
+    "tags": [
+      "Dur",
+      "Puissance",
+      "Fond de court"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Pression Totale",
+      "description": "Tant que ce joueur est Actif, les attaques des joueurs de Base de votre adversaire infligent 20 dégâts de moins."
+    },
+    "attacks": [
+      {
+        "name": "Coup Droit Marteau",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Assaut du Fond du Court",
+        "cost": 4,
+        "damage": 140,
+        "effect": "Défaussez 1 Endurance attachée à ce joueur."
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Gazon",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "murray_016",
+    "type": "PLAYER",
+    "name": "Andy Murray",
+    "artworkPath": "/artworks/murray_016.webp",
+    "tags": [
+      "Gazon",
+      "Défenseur",
+      "Tactique"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Résilience Britannique",
+      "description": "Si ce joueur subit des dégâts d'une attaque, lancez une pièce. Si c'est face, prévenez 30 de ces dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Passing Chirurgical",
+        "cost": 2,
+        "damage": 40,
+        "effect": "Si l'adversaire a battu en retraite au tour précédent, cette attaque inflige +40 dégâts."
+      },
+      {
+        "name": "Mur Défensif",
+        "cost": 3,
+        "damage": 90
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "wawrinka_017",
+    "type": "PLAYER",
+    "name": "Stan Wawrinka",
+    "artworkPath": "/artworks/wawrinka_017.webp",
+    "tags": [
+      "Terre Battue",
+      "Puissance",
+      "Revers"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Revers d'Acier",
+      "description": "Les attaques de ce joueur infligent +20 dégâts aux adversaires de type 'Gazon'."
+    },
+    "attacks": [
+      {
+        "name": "Missile à Une Main",
+        "cost": 3,
+        "damage": 80
+      },
+      {
+        "name": "Frappe des Alpes",
+        "cost": 4,
+        "damage": 150,
+        "effect": "Ce joueur s'inflige 20 dégâts à lui-même."
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "kuerten_018",
+    "type": "PLAYER",
+    "name": "Gustavo Kuerten",
+    "artworkPath": "/artworks/kuerten_018.webp",
+    "tags": [
+      "Terre Battue",
+      "Charisme",
+      "Fond de court"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Joie Brésilienne",
+      "description": "Lorsque vous jouez cette carte de votre main vers votre Banc, soignez 20 PV à votre joueur Actif."
+    },
+    "attacks": [
+      {
+        "name": "Lift Carioca",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Roi de Roland-Garros",
+        "cost": 3,
+        "damage": 110
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "emerson_019",
+    "type": "PLAYER",
+    "name": "Roy Emerson",
+    "artworkPath": "/artworks/emerson_019.webp",
+    "tags": [
+      "Gazon",
+      "Service-Volée",
+      "Légende"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Palmarès Impérial",
+      "description": "Une fois par tour, vous pouvez chercher une carte 'Équipement' dans votre deck et l'attacher à ce joueur."
+    },
+    "attacks": [
+      {
+        "name": "Volée Australienne",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Grand Chelem Royal",
+        "cost": 3,
+        "damage": 110
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "perry_020",
+    "type": "PLAYER",
+    "name": "Fred Perry",
+    "artworkPath": "/artworks/perry_020.webp",
+    "tags": [
+      "Gazon",
+      "Élégance",
+      "Légende"
+    ],
+    "maxHp": 150,
+    "specialAbility": {
+      "name": "Allure de Gentleman",
+      "description": "Les attaques de ce joueur ne déclenchent pas les 'Talents' (Capacités Spéciales) du joueur Défenseur."
+    },
+    "attacks": [
+      {
+        "name": "Service Distingué",
+        "cost": 1,
+        "damage": 30
+      },
+      {
+        "name": "Maître de Wimbledon",
+        "cost": 3,
+        "damage": 100
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "rosewall_021",
+    "type": "PLAYER",
+    "name": "Ken Rosewall",
+    "artworkPath": "/artworks/rosewall_021.webp",
+    "tags": [
+      "Dur",
+      "Tacticien",
+      "Revers"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Précision Intemporelle",
+      "description": "Si ce joueur a moins de 50 PV, ses attaques infligent +30 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Revers Scalpel",
+        "cost": 1,
+        "damage": 30,
+        "effect": "Cette attaque ignore les Résistances du joueur Défenseur."
+      },
+      {
+        "name": "Rosewall Éternel",
+        "cost": 3,
+        "damage": 90
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "hewitt_022",
+    "type": "PLAYER",
+    "name": "Lleyton Hewitt",
+    "artworkPath": "/artworks/hewitt_022.webp",
+    "tags": [
+      "Dur",
+      "Combattant",
+      "Vitesse"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Guerrier Inépuisable",
+      "description": "Si ce joueur est attaqué, lancez une pièce. Si c'est face, le joueur attaquant subit 20 dégâts en retour."
+    },
+    "attacks": [
+      {
+        "name": "Contre Électrique",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Cri du Champion",
+        "cost": 3,
+        "damage": 100,
+        "effect": "L'adversaire doit défausser une carte au hasard de sa main."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "graf_023",
+    "type": "PLAYER",
+    "name": "Steffi Graf",
+    "artworkPath": "/artworks/graf_023.webp",
+    "tags": [
+      "Gazon",
+      "Vitesse",
+      "Coup Droit"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Grâce Dominante",
+      "description": "Une fois par tour, vous pouvez regarder les 3 premières cartes de votre deck et les replacer dans l'ordre de votre choix."
+    },
+    "attacks": [
+      {
+        "name": "Coup Droit Doré",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Golden Slam",
+        "cost": 4,
+        "damage": 140,
+        "effect": "Si vous avez une carte 'Stade' en jeu, cette attaque coûte 1 Endurance de moins."
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "navratilova_024",
+    "type": "PLAYER",
+    "name": "Martina Navratilova",
+    "artworkPath": "/artworks/navratilova_024.webp",
+    "tags": [
+      "Gazon",
+      "Service-Volée",
+      "Gauchère"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Instinct de Gauchère",
+      "description": "Les joueurs Actifs de votre adversaire qui n'ont pas le tag 'Gaucher' paient 1 Endurance supplémentaire pour attaquer."
+    },
+    "attacks": [
+      {
+        "name": "Serve-et-Volée Reine",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Filet Impérial",
+        "cost": 4,
+        "damage": 130
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "williams_s_025",
+    "type": "PLAYER",
+    "name": "Serena Williams",
+    "artworkPath": "/artworks/williams_s_025.webp",
+    "tags": [
+      "Dur",
+      "Puissance",
+      "Service"
+    ],
+    "maxHp": 190,
+    "specialAbility": {
+      "name": "Reine du Power Tennis",
+      "description": "Les attaques de ce joueur ne peuvent pas être modifiées ou réduites par les cartes de l'adversaire."
+    },
+    "attacks": [
+      {
+        "name": "Service Sismique",
+        "cost": 3,
+        "damage": 80
+      },
+      {
+        "name": "Empire Serena",
+        "cost": 4,
+        "damage": 150,
+        "effect": "Ce joueur ne peut pas utiliser 'Empire Serena' lors de son prochain tour."
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "evert_026",
+    "type": "PLAYER",
+    "name": "Chris Evert",
+    "artworkPath": "/artworks/evert_026.webp",
+    "tags": [
+      "Terre Battue",
+      "Régularité",
+      "Fond de court"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Sérénité Inébranlable",
+      "description": "Tant que ce joueur est Actif, votre adversaire ne peut jouer qu'une seule carte 'Objet' par tour."
+    },
+    "attacks": [
+      {
+        "name": "Ligne Pure",
+        "cost": 2,
+        "damage": 40
+      },
+      {
+        "name": "Mur de Régularité",
+        "cost": 3,
+        "damage": 90,
+        "effect": "Soignez 20 PV à ce joueur."
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "hingis_027",
+    "type": "PLAYER",
+    "name": "Martina Hingis",
+    "artworkPath": "/artworks/hingis_027.webp",
+    "tags": [
+      "Dur",
+      "Tacticienne",
+      "Toucher"
+    ],
+    "maxHp": 150,
+    "specialAbility": {
+      "name": "Intelligence Suisse",
+      "description": "Quand vous jouez ce joueur depuis votre main sur votre Banc, vous pouvez chercher une carte 'Staff' dans votre deck et l'ajouter à votre main."
+    },
+    "attacks": [
+      {
+        "name": "Amortie Malicieuse",
+        "cost": 1,
+        "damage": 30,
+        "effect": "Défaussez 1 Endurance attachée au joueur Défenseur."
+      },
+      {
+        "name": "Échec et Mat du Court",
+        "cost": 3,
+        "damage": 100
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "seles_028",
+    "type": "PLAYER",
+    "name": "Monica Seles",
+    "artworkPath": "/artworks/seles_028.webp",
+    "tags": [
+      "Terre Battue",
+      "Puissance",
+      "Gauchère"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Ferveur Inarrêtable",
+      "description": "Si ce joueur a subi des dégâts au tour précédent, ses attaques infligent +30 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Frappe à Deux Mains",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Rafale Seles",
+        "cost": 4,
+        "damage": 140
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "swiatek_029",
+    "type": "PLAYER",
+    "name": "Iga Swiatek",
+    "artworkPath": "/artworks/swiatek_029.webp",
+    "tags": [
+      "Terre Battue",
+      "Vitesse",
+      "Lift"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Règne sur Terre",
+      "description": "Tant que la carte 'Stade' en jeu est 'Court en Terre Battue', ce joueur gagne +20 PV maximum."
+    },
+    "attacks": [
+      {
+        "name": "Topspin de Varsovie",
+        "cost": 2,
+        "damage": 50,
+        "effect": "L'adversaire ne peut pas battre en retraite lors de son prochain tour."
+      },
+      {
+        "name": "Empire de Roland",
+        "cost": 4,
+        "damage": 130
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "barty_030",
+    "type": "PLAYER",
+    "name": "Ashleigh Barty",
+    "artworkPath": "/artworks/barty_030.webp",
+    "tags": [
+      "Gazon",
+      "Toucher",
+      "Tacticienne"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Maîtrise Australienne",
+      "description": "Une fois par tour, vous pouvez défausser 1 carte de votre main pour piocher 2 cartes."
+    },
+    "attacks": [
+      {
+        "name": "Slice Magique",
+        "cost": 1,
+        "damage": 20,
+        "effect": "Lors du prochain tour de l'adversaire, les attaques de son joueur Actif infligent 20 dégâts de moins."
+      },
+      {
+        "name": "Polyvalence Totale",
+        "cost": 3,
+        "damage": 110
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "henin_031",
+    "type": "PLAYER",
+    "name": "Justine Henin",
+    "artworkPath": "/artworks/henin_031.webp",
+    "tags": [
+      "Terre Battue",
+      "Revers",
+      "Tacticienne"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Revers de Légende",
+      "description": "Si l'adversaire a plus de PV que ce joueur, les attaques de ce joueur infligent +30 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Lame Belge",
+        "cost": 2,
+        "damage": 50,
+        "effect": "Cette attaque ignore les effets de réduction de dégâts du Défenseur."
+      },
+      {
+        "name": "Cœur de Championne",
+        "cost": 4,
+        "damage": 120
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "davenport_032",
+    "type": "PLAYER",
+    "name": "Lindsay Davenport",
+    "artworkPath": "/artworks/davenport_032.webp",
+    "tags": [
+      "Dur",
+      "Puissance",
+      "Fond de court"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Pression Linéaire",
+      "description": "Les joueurs sur le Banc de votre adversaire ne peuvent pas être soignés par des cartes 'Objet' ou 'Staff'."
+    },
+    "attacks": [
+      {
+        "name": "Frappe Longue Ligne",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Mur de Californie",
+        "cost": 3,
+        "damage": 100,
+        "effect": "Le joueur Défenseur ne peut pas attaquer lors de son prochain tour s'il n'attache pas une Endurance."
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "sabalenka_033",
+    "type": "PLAYER",
+    "name": "Aryna Sabalenka",
+    "artworkPath": "/artworks/sabalenka_033.webp",
+    "tags": [
+      "Dur",
+      "Puissance",
+      "Agression"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Furie de Minsk",
+      "description": "Une fois par tour, vous pouvez défausser la carte du dessus de votre deck. Si c'est une Endurance, attachez-la à ce joueur."
+    },
+    "attacks": [
+      {
+        "name": "Service Orageux",
+        "cost": 2,
+        "damage": 70,
+        "effect": "Lancez une pièce. Si c'est pile, cette attaque inflige 20 dégâts à un de vos joueurs de Banc."
+      },
+      {
+        "name": "Tempête Sabalenka",
+        "cost": 4,
+        "damage": 160,
+        "effect": "Ce joueur s'inflige 30 dégâts à lui-même."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "sharapova_034",
+    "type": "PLAYER",
+    "name": "Maria Sharapova",
+    "artworkPath": "/artworks/sharapova_034.webp",
+    "tags": [
+      "Dur",
+      "Puissance",
+      "Mental"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Aura Sibérienne",
+      "description": "Tant que ce joueur a toutes ses Endurances attachées pour son attaque 'Diamant de Moscou', il subit 20 dégâts de moins des attaques adverses."
+    },
+    "attacks": [
+      {
+        "name": "Cri de Championne",
+        "cost": 2,
+        "damage": 50,
+        "effect": "Le joueur Défenseur doit échanger sa place avec un joueur de son Banc."
+      },
+      {
+        "name": "Diamant de Moscou",
+        "cost": 4,
+        "damage": 130
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Gazon",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "clijsters_035",
+    "type": "PLAYER",
+    "name": "Kim Clijsters",
+    "artworkPath": "/artworks/clijsters_035.webp",
+    "tags": [
+      "Dur",
+      "Vitesse",
+      "Défense"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Souplesse Belge",
+      "description": "Quand ce joueur subit une attaque, lancez une pièce. Si c'est face, prévenez tous les dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Glissade Miracle",
+        "cost": 1,
+        "damage": 30,
+        "effect": "Échangez ce joueur avec un de vos joueurs de Banc."
+      },
+      {
+        "name": "Retour Gagnant",
+        "cost": 3,
+        "damage": 100
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "smith_court_036",
+    "type": "PLAYER",
+    "name": "Margaret Smith Court",
+    "artworkPath": "/artworks/smith_court_036.webp",
+    "tags": [
+      "Gazon",
+      "Légende",
+      "Volée"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Palmarès Monumental",
+      "description": "Tant que ce joueur est Actif, vos cartes 'Endurance' attachées à vos joueurs de Banc comptent comme fournissant 2 Endurances de n'importe quel type pour le coût de retraite."
+    },
+    "attacks": [
+      {
+        "name": "Volée Impériale",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Grand Chelem Absolu",
+        "cost": 4,
+        "damage": 140
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "king_037",
+    "type": "PLAYER",
+    "name": "Billie Jean King",
+    "artworkPath": "/artworks/king_037.webp",
+    "tags": [
+      "Gazon",
+      "Service-Volée",
+      "Leader"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Voix des Championnes",
+      "description": "Vos autres joueurs ayant le tag 'Gazon' infligent +20 dégâts (avant application de la Faiblesse et de la Résistance)."
+    },
+    "attacks": [
+      {
+        "name": "Service Rebelle",
+        "cost": 2,
+        "damage": 40
+      },
+      {
+        "name": "Combat pour l'Égalité",
+        "cost": 3,
+        "damage": 90,
+        "effect": "Si ce joueur a moins de PV que le Défenseur, cette attaque inflige +40 dégâts."
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "lenglen_038",
+    "type": "PLAYER",
+    "name": "Suzanne Lenglen",
+    "artworkPath": "/artworks/lenglen_038.webp",
+    "tags": [
+      "Terre Battue",
+      "Légende",
+      "Élégance"
+    ],
+    "maxHp": 150,
+    "specialAbility": {
+      "name": "Divine Élégance",
+      "description": "Une fois pendant votre tour, si ce joueur est sur le Banc, vous pouvez le soigner de 30 PV."
+    },
+    "attacks": [
+      {
+        "name": "Danse du Court",
+        "cost": 1,
+        "damage": 30,
+        "effect": "Vous pouvez déplacer une Endurance attachée à un de vos joueurs vers ce joueur."
+      },
+      {
+        "name": "La Divine",
+        "cost": 3,
+        "damage": 100
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "williams_v_039",
+    "type": "PLAYER",
+    "name": "Venus Williams",
+    "artworkPath": "/artworks/williams_v_039.webp",
+    "tags": [
+      "Gazon",
+      "Puissance",
+      "Service"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Éclat de Championne",
+      "description": "Si vous jouez une carte 'Staff' ce tour-ci, les attaques de ce joueur infligent +30 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Service Solaire",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Empire Vénus",
+        "cost": 4,
+        "damage": 130,
+        "effect": "Défaussez l'Endurance attachée au Défenseur."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "nastase_040",
+    "type": "PLAYER",
+    "name": "Ilie Nastase",
+    "artworkPath": "/artworks/nastase_040.webp",
+    "tags": [
+      "Terre Battue",
+      "Showman",
+      "Imprévisible"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Génie Imprévisible",
+      "description": "Avant d'attaquer, lancez une pièce. Si c'est face, l'attaque ne coûte aucune Endurance. Si c'est pile, votre tour se termine sans attaquer."
+    },
+    "attacks": [
+      {
+        "name": "Toucher Roumain",
+        "cost": 2,
+        "damage": 40,
+        "effect": "Le joueur Défenseur est Confus (il doit lancer une pièce pour attaquer, si pile il s'inflige 30 dégâts)."
+      },
+      {
+        "name": "Magie de Bucarest",
+        "cost": 3,
+        "damage": 110
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "medvedev_042",
+    "type": "PLAYER",
+    "name": "Daniil Medvedev",
+    "artworkPath": "/artworks/medvedev_042.webp",
+    "tags": [
+      "Dur",
+      "Défense",
+      "Tacticien"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Calcul Glacial",
+      "description": "Une fois par tour, vous pouvez regarder la main de votre adversaire. Si vous le faites, vous ne pouvez pas jouer de carte 'Objet' ce tour-ci."
+    },
+    "attacks": [
+      {
+        "name": "Ligne Polaire",
+        "cost": 2,
+        "damage": 40
+      },
+      {
+        "name": "Énigme de Moscou",
+        "cost": 4,
+        "damage": 130,
+        "effect": "Au prochain tour, l'adversaire doit payer 1 Endurance supplémentaire pour attaquer."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "roddick_043",
+    "type": "PLAYER",
+    "name": "Andy Roddick",
+    "artworkPath": "/artworks/roddick_043.webp",
+    "tags": [
+      "Dur",
+      "Service",
+      "Puissance"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Canon du Texas",
+      "description": "Une fois par tour, vous pouvez défausser 1 Endurance de ce joueur pour infliger 20 dégâts à l'un des joueurs du Banc de votre adversaire."
+    },
+    "attacks": [
+      {
+        "name": "Service Fulgurant",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Tempête Américaine",
+        "cost": 4,
+        "damage": 140,
+        "effect": "Ce joueur ne peut pas attaquer lors de votre prochain tour."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "safin_044",
+    "type": "PLAYER",
+    "name": "Marat Safin",
+    "artworkPath": "/artworks/safin_044.webp",
+    "tags": [
+      "Dur",
+      "Puissance",
+      "Imprévisible"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Volcan Russe",
+      "description": "À la fin de votre tour, lancez une pièce. Si c'est face, Safin gagne +30 dégâts pour sa prochaine attaque. Si c'est pile, il s'inflige 10 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Frappe d'Acier",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Colère de Moscou",
+        "cost": 4,
+        "damage": 140
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Gazon",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "ferrero_045",
+    "type": "PLAYER",
+    "name": "Juan Carlos Ferrero",
+    "artworkPath": "/artworks/ferrero_045.webp",
+    "tags": [
+      "Terre Battue",
+      "Vitesse",
+      "Coup Droit"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Roi de Valence",
+      "description": "Si ce joueur a au moins 2 Endurances attachées, son coût de retraite est de 0."
+    },
+    "attacks": [
+      {
+        "name": "Lift Ibérique",
+        "cost": 2,
+        "damage": 40
+      },
+      {
+        "name": "Éclair de Terre Battue",
+        "cost": 3,
+        "damage": 110,
+        "effect": "Cette attaque n'est pas affectée par les effets de Résistance de l'adversaire."
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "newcombe_046",
+    "type": "PLAYER",
+    "name": "John Newcombe",
+    "artworkPath": "/artworks/newcombe_046.webp",
+    "tags": [
+      "Gazon",
+      "Service-Volée",
+      "Légende"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Volée Australienne",
+      "description": "Les attaques de ce joueur ignorent les effets négatifs imposés par les cartes 'Stade' adverses."
+    },
+    "attacks": [
+      {
+        "name": "Service Héritage",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Maître du Gazon",
+        "cost": 3,
+        "damage": 120,
+        "effect": "Défaussez 1 Endurance attachée à ce joueur."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "kafelnikov_047",
+    "type": "PLAYER",
+    "name": "Ievgueni Kafelnikov",
+    "artworkPath": "/artworks/kafelnikov_047.webp",
+    "tags": [
+      "Dur",
+      "Régularité",
+      "Fond de court"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Maîtrise Olympique",
+      "description": "Lorsque ce joueur met K.O. le joueur Actif adverse, vous pouvez piocher 1 carte de votre deck en plus de marquer votre point."
+    },
+    "attacks": [
+      {
+        "name": "Ligne de Fer",
+        "cost": 2,
+        "damage": 40,
+        "effect": "Le joueur Défenseur ne peut pas être soigné au prochain tour."
+      },
+      {
+        "name": "Maître de Moscou",
+        "cost": 3,
+        "damage": 100
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Gazon",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "muster_048",
+    "type": "PLAYER",
+    "name": "Thomas Muster",
+    "artworkPath": "/artworks/muster_048.webp",
+    "tags": [
+      "Terre Battue",
+      "Combattant",
+      "Puissance"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Marteau Autrichien",
+      "description": "Si ce joueur a déjà des marqueurs de dégâts (il a perdu des PV), ses attaques infligent +20 dégâts supplémentaires."
+    },
+    "attacks": [
+      {
+        "name": "Poussée de Fond",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Forteresse de Terre",
+        "cost": 4,
+        "damage": 130,
+        "effect": "Soignez 20 PV à ce joueur."
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "rios_049",
+    "type": "PLAYER",
+    "name": "Marcelo Ríos",
+    "artworkPath": "/artworks/rios_049.webp",
+    "tags": [
+      "Terre Battue",
+      "Créativité",
+      "Gaucher"
+    ],
+    "maxHp": 150,
+    "specialAbility": {
+      "name": "Toucher de Santiago",
+      "description": "Une fois par tour, vous pouvez regarder la première carte de votre deck. Vous pouvez choisir de la laisser sur le dessus ou de la placer sous votre deck."
+    },
+    "attacks": [
+      {
+        "name": "Gauche Enchantée",
+        "cost": 1,
+        "damage": 30,
+        "effect": "Lancez une pièce. Si c'est face, le joueur Actif adverse ne peut pas battre en retraite au prochain tour."
+      },
+      {
+        "name": "Illusion Chilienne",
+        "cost": 3,
+        "damage": 90
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "moya_050",
+    "type": "PLAYER",
+    "name": "Carlos Moyà",
+    "artworkPath": "/artworks/moya_050.webp",
+    "tags": [
+      "Terre Battue",
+      "Coup Droit",
+      "Puissance"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Roi de Majorque",
+      "description": "Tant que ce joueur est Actif, le coût de retraite de tous vos autres joueurs ayant le tag 'Terre Battue' est réduit de 1."
+    },
+    "attacks": [
+      {
+        "name": "Lift Baléare",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Tempête de Majorque",
+        "cost": 4,
+        "damage": 140
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "rafter_051",
+    "type": "PLAYER",
+    "name": "Patrick Rafter",
+    "artworkPath": "/artworks/rafter_051.webp",
+    "tags": [
+      "Gazon",
+      "Service-Volée",
+      "Combattant"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Charisme Australien",
+      "description": "Si ce joueur devient le joueur Actif (depuis le Banc) pendant votre tour, la première attaque qu'il subit ce tour-là est réduite de 30 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Service de Brisbane",
+        "cost": 2,
+        "damage": 40,
+        "effect": "Vous pouvez attacher 1 carte Endurance de votre main à l'un de vos joueurs de Banc."
+      },
+      {
+        "name": "Rafter Express",
+        "cost": 3,
+        "damage": 110
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "wozniacki_052",
+    "type": "PLAYER",
+    "name": "Caroline Wozniacki",
+    "artworkPath": "/artworks/wozniacki_052.webp",
+    "tags": [
+      "Dur",
+      "Défense",
+      "Régularité"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Mur Nordique",
+      "description": "Si ce joueur a subi des dégâts lors du dernier tour de l'adversaire, soignez-lui 20 PV à la fin de votre tour."
+    },
+    "attacks": [
+      {
+        "name": "Contre de Copenhague",
+        "cost": 2,
+        "damage": 40,
+        "effect": "Cette attaque inflige 20 dégâts supplémentaires si le Défenseur est de type 'Terre Battue'."
+      },
+      {
+        "name": "Tempête Scandinave",
+        "cost": 3,
+        "damage": 100
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "halep_053",
+    "type": "PLAYER",
+    "name": "Simona Halep",
+    "artworkPath": "/artworks/halep_053.webp",
+    "tags": [
+      "Terre Battue",
+      "Vitesse",
+      "Combattante"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Esprit de Constanța",
+      "description": "Les attaques de ce joueur coûtent 1 Endurance de moins si votre adversaire a moins de cartes 'Récompense' que vous."
+    },
+    "attacks": [
+      {
+        "name": "Frappe Roumaine",
+        "cost": 1,
+        "damage": 30
+      },
+      {
+        "name": "Tempête Halep",
+        "cost": 3,
+        "damage": 110
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "azarenka_054",
+    "type": "PLAYER",
+    "name": "Victoria Azarenka",
+    "artworkPath": "/artworks/azarenka_054.webp",
+    "tags": [
+      "Dur",
+      "Agression",
+      "Mental"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Foudre de Minsk",
+      "description": "Quand vous jouez ce joueur de votre main sur votre Banc, forcez l'adversaire à défausser 1 carte au hasard de sa main."
+    },
+    "attacks": [
+      {
+        "name": "Retour Canon",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Ouragan Biélorusse",
+        "cost": 4,
+        "damage": 130,
+        "effect": "Cette attaque inflige 10 dégâts à chaque joueur sur le Banc de l'adversaire."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "mauresmo_055",
+    "type": "PLAYER",
+    "name": "Amélie Mauresmo",
+    "artworkPath": "/artworks/mauresmo_055.webp",
+    "tags": [
+      "Gazon",
+      "Revers",
+      "Toucher"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Panache Français",
+      "description": "Une fois par tour, vous pouvez défausser une carte de votre main pour réduire le coût d'attaque de ce joueur de 1 Endurance pour ce tour."
+    },
+    "attacks": [
+      {
+        "name": "Revers Royal",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Brillance Parisienne",
+        "cost": 3,
+        "damage": 110
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "kerber_056",
+    "type": "PLAYER",
+    "name": "Angelique Kerber",
+    "artworkPath": "/artworks/kerber_056.webp",
+    "tags": [
+      "Dur",
+      "Contre",
+      "Gauchère"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Mur de Brême",
+      "description": "Les attaques du joueur adverse infligent 20 dégâts de moins à ce joueur."
+    },
+    "attacks": [
+      {
+        "name": "Contre Allemand",
+        "cost": 2,
+        "damage": 40,
+        "effect": "Si ce joueur a subi des dégâts au tour précédent, cette attaque inflige +40 dégâts."
+      },
+      {
+        "name": "Tempête de Stuttgart",
+        "cost": 4,
+        "damage": 120
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "safina_057",
+    "type": "PLAYER",
+    "name": "Dinara Safina",
+    "artworkPath": "/artworks/safina_057.webp",
+    "tags": [
+      "Terre Battue",
+      "Puissance",
+      "Fond de court"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Force de Moscou",
+      "description": "Les attaques de ce joueur ne peuvent pas être affectées par les effets d'une carte 'Stade' jouée par l'adversaire."
+    },
+    "attacks": [
+      {
+        "name": "Frappe de Fer",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Tempête de Terre",
+        "cost": 4,
+        "damage": 140,
+        "effect": "Défaussez 1 Endurance attachée à ce joueur."
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "osaka_058",
+    "type": "PLAYER",
+    "name": "Naomi Osaka",
+    "artworkPath": "/artworks/osaka_058.webp",
+    "tags": [
+      "Dur",
+      "Puissance",
+      "Mental"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Impact de Tokyo",
+      "description": "Si vous n'avez joué aucune carte 'Objet' ce tour-ci, les attaques de ce joueur infligent +30 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Service Flash",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Onde Osaka",
+        "cost": 4,
+        "damage": 150,
+        "effect": "Ce joueur s'inflige 20 dégâts à lui-même."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "capriati_059",
+    "type": "PLAYER",
+    "name": "Jennifer Capriati",
+    "artworkPath": "/artworks/capriati_059.webp",
+    "tags": [
+      "Dur",
+      "Résilience",
+      "Frappe Ligne"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Cœur de Championne",
+      "description": "Si ce joueur a moins de 60 PV, son attaque 'Phoenix Américain' coûte 2 Endurances de moins."
+    },
+    "attacks": [
+      {
+        "name": "Retour de Floride",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Phoenix Américain",
+        "cost": 4,
+        "damage": 130
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Gazon",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "noah_060",
+    "type": "PLAYER",
+    "name": "Yannick Noah",
+    "artworkPath": "/artworks/noah_060.webp",
+    "tags": [
+      "Terre Battue",
+      "Charisme",
+      "Panache"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "L'Esprit de l'Arche",
+      "description": "Une fois par partie, pendant votre tour, vous pouvez soigner complètement ce joueur. S'il est soigné ainsi, votre tour se termine immédiatement."
+    },
+    "attacks": [
+      {
+        "name": "Service du Cœur",
+        "cost": 2,
+        "damage": 40
+      },
+      {
+        "name": "Smash Arc-en-Ciel",
+        "cost": 3,
+        "damage": 110,
+        "effect": "L'adversaire est Confus."
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "leconte_061",
+    "type": "PLAYER",
+    "name": "Henri Leconte",
+    "artworkPath": "/artworks/leconte_061.webp",
+    "tags": [
+      "Terre Battue",
+      "Imprévisible",
+      "Toucher"
+    ],
+    "maxHp": 150,
+    "specialAbility": {
+      "name": "Improvisation Magique",
+      "description": "À la fin de votre tour, si ce joueur est Actif, vous pouvez piocher 1 carte."
+    },
+    "attacks": [
+      {
+        "name": "Amortie de Génie",
+        "cost": 1,
+        "damage": 20,
+        "effect": "Lancez une pièce. Si c'est face, le joueur Défenseur ne peut pas attaquer au prochain tour."
+      },
+      {
+        "name": "Passing de Légende",
+        "cost": 3,
+        "damage": 100,
+        "effect": "Si ce joueur a utilisé 'Amortie de Génie' au tour précédent, cette attaque inflige +40 dégâts."
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "lacoste_062",
+    "type": "PLAYER",
+    "name": "René Lacoste",
+    "artworkPath": "/artworks/lacoste_062.webp",
+    "tags": [
+      "Dur",
+      "Tacticien",
+      "Légende"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "L'Architecte du Jeu",
+      "description": "Une fois par tour, vous pouvez regarder les 3 premières cartes de votre deck. Mettez-en une dans votre main et placez les autres sous votre deck."
+    },
+    "attacks": [
+      {
+        "name": "Service Placé",
+        "cost": 2,
+        "damage": 40
+      },
+      {
+        "name": "Volée Intelligente",
+        "cost": 4,
+        "damage": 120,
+        "effect": "Cette attaque inflige 20 dégâts supplémentaires pour chaque carte 'Staff' dans votre pile de défausse (maximum +60)."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "monfils_063",
+    "type": "PLAYER",
+    "name": "Gaël Monfils",
+    "artworkPath": "/artworks/monfils_063.webp",
+    "tags": [
+      "Dur",
+      "Spectacle",
+      "Athlète"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Danse Électrique",
+      "description": "Une fois par partie, pendant le tour de l'adversaire, vous pouvez annuler tous les dégâts infligés à ce joueur par une attaque."
+    },
+    "attacks": [
+      {
+        "name": "Contre-Attaque Aérienne",
+        "cost": 2,
+        "damage": 50,
+        "effect": "L'adversaire doit échanger son joueur Actif avec l'un des joueurs de son Banc."
+      },
+      {
+        "name": "Coup de Génie",
+        "cost": 4,
+        "damage": 130
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "gasquet_064",
+    "type": "PLAYER",
+    "name": "Richard Gasquet",
+    "artworkPath": "/artworks/gasquet_064.webp",
+    "tags": [
+      "Gazon",
+      "Revers",
+      "Finesse"
+    ],
+    "maxHp": 150,
+    "specialAbility": {
+      "name": "L'Art du Temps Juste",
+      "description": "Une fois par tour, vous pouvez regarder la main de votre adversaire. Si vous le faites, vos attaques infligent +20 dégâts ce tour-ci."
+    },
+    "attacks": [
+      {
+        "name": "Revers à une Main",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Danse de la Ligne",
+        "cost": 3,
+        "damage": 100
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "tsonga_065",
+    "type": "PLAYER",
+    "name": "Jo-Wilfried Tsonga",
+    "artworkPath": "/artworks/tsonga_065.webp",
+    "tags": [
+      "Dur",
+      "Puissance",
+      "Charisme"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Élan de Puissance",
+      "description": "Si ce joueur met K.O. un adversaire, les attaques du nouveau joueur Actif adverse coûtent 1 Endurance supplémentaire lors du prochain tour."
+    },
+    "attacks": [
+      {
+        "name": "Service Canon",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Revers de Charisme",
+        "cost": 4,
+        "damage": 140,
+        "effect": "Défaussez 1 Endurance attachée à ce joueur."
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Gazon",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "santoro_066",
+    "type": "PLAYER",
+    "name": "Fabrice Santoro",
+    "artworkPath": "/artworks/santoro_066.webp",
+    "tags": [
+      "Gazon",
+      "Tacticien",
+      "Imprévisible"
+    ],
+    "maxHp": 140,
+    "specialAbility": {
+      "name": "L'Art de l'Imprévisible",
+      "description": "Si ce joueur est votre joueur Actif, chaque fois que l'adversaire joue une carte 'Staff', il doit lancer une pièce. Si c'est pile, la carte n'a aucun effet et est défaussée."
+    },
+    "attacks": [
+      {
+        "name": "Amorti Trompeur",
+        "cost": 1,
+        "damage": 20,
+        "effect": "Le joueur Défenseur ne peut pas battre en retraite lors de son prochain tour."
+      },
+      {
+        "name": "Passage de Lutin",
+        "cost": 3,
+        "damage": 90
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "simon_067",
+    "type": "PLAYER",
+    "name": "Gilles Simon",
+    "artworkPath": "/artworks/simon_067.webp",
+    "tags": [
+      "Dur",
+      "Défense",
+      "Tacticien"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Anticipation Intérieure",
+      "description": "Tous les dégâts infligés à ce joueur par des attaques adverses sont réduits de 20."
+    },
+    "attacks": [
+      {
+        "name": "Revers de Contre",
+        "cost": 2,
+        "damage": 40,
+        "effect": "Soignez 20 PV à ce joueur."
+      },
+      {
+        "name": "Marathon Tactique",
+        "cost": 3,
+        "damage": 80,
+        "effect": "Défaussez 1 Endurance attachée au joueur Défenseur."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "forget_068",
+    "type": "PLAYER",
+    "name": "Guy Forget",
+    "artworkPath": "/artworks/forget_068.webp",
+    "tags": [
+      "Gazon",
+      "Service-Volée",
+      "Leader"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Maîtrise Épurée",
+      "description": "Une fois par tour, si ce joueur est sur votre Banc, vous pouvez déplacer 1 Endurance attachée à l'un de vos autres joueurs vers celui-ci."
+    },
+    "attacks": [
+      {
+        "name": "Service Foudroyant",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Revers de Patron",
+        "cost": 4,
+        "damage": 130
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "pioline_069",
+    "type": "PLAYER",
+    "name": "Cédric Pioline",
+    "artworkPath": "/artworks/pioline_069.webp",
+    "tags": [
+      "Gazon",
+      "Élégance",
+      "Régularité"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Élégance Constante",
+      "description": "Une fois par tour, si vous avez exactement 3 cartes en main, vous pouvez piocher 1 carte."
+    },
+    "attacks": [
+      {
+        "name": "Revers de Maître",
+        "cost": 2,
+        "damage": 40
+      },
+      {
+        "name": "Service & Volée",
+        "cost": 3,
+        "damage": 100
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "llodra_070",
+    "type": "PLAYER",
+    "name": "Michaël Llodra",
+    "artworkPath": "/artworks/llodra_070.webp",
+    "tags": [
+      "Gazon",
+      "Service-Volée",
+      "Gaucher"
+    ],
+    "maxHp": 150,
+    "specialAbility": {
+      "name": "Maître du Filet",
+      "description": "Si vous avez joué une carte 'Équipement' ce tour-ci, les attaques de ce joueur infligent +30 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Service Gaucher",
+        "cost": 2,
+        "damage": 40
+      },
+      {
+        "name": "Volée Parisienne",
+        "cost": 3,
+        "damage": 100
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "mathieu_071",
+    "type": "PLAYER",
+    "name": "Paul-Henri Mathieu",
+    "artworkPath": "/artworks/mathieu_071.webp",
+    "tags": [
+      "Terre Battue",
+      "Combattant",
+      "Résilience"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Combattant de Strasbourg",
+      "description": "Si ce joueur a 50 PV ou moins restants, ses attaques infligent +40 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Revers de Braise",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Tempête de Résilience",
+        "cost": 4,
+        "damage": 120
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "clement_072",
+    "type": "PLAYER",
+    "name": "Arnaud Clément",
+    "artworkPath": "/artworks/clement_072.webp",
+    "tags": [
+      "Dur",
+      "Vitesse",
+      "Endurance"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Cœur de Marseille",
+      "description": "Une fois par tour, si ce joueur a attaqué au tour précédent, vous pouvez annuler 20 dégâts de la prochaine attaque qu'il subit et piocher 1 carte."
+    },
+    "attacks": [
+      {
+        "name": "Sprint de Fond",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Ouragan Provençal",
+        "cost": 3,
+        "damage": 100,
+        "effect": "Cette attaque inflige 20 dégâts supplémentaires si vous avez moins de cartes en main que votre adversaire."
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "mahut_073",
+    "type": "PLAYER",
+    "name": "Nicolas Mahut",
+    "artworkPath": "/artworks/mahut_073.webp",
+    "tags": [
+      "Gazon",
+      "Service-Volée",
+      "Endurance"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Maître du Gazon",
+      "description": "Si la carte 'Stade' en jeu est 'Gazon', ce joueur gagne +20 PV maximum et ses attaques coûtent 1 Endurance de moins."
+    },
+    "attacks": [
+      {
+        "name": "Service de Halle",
+        "cost": 2,
+        "damage": 40,
+        "effect": "Le joueur Défenseur ne peut pas être échangé ou battre en retraite au prochain tour."
+      },
+      {
+        "name": "Duel Marathon",
+        "cost": 4,
+        "damage": 130
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "grosjean_074",
+    "type": "PLAYER",
+    "name": "Sébastien Grosjean",
+    "artworkPath": "/artworks/grosjean_074.webp",
+    "tags": [
+      "Dur",
+      "Explosivité",
+      "Coup Droit"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Dynamite Marseillaise",
+      "description": "Si ce joueur est placé sur le terrain et attaque lors du même tour, il inflige +30 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Retour Fusée",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Tempête de Vitesse",
+        "cost": 3,
+        "damage": 110
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "moutet_075",
+    "type": "PLAYER",
+    "name": "Corentin Moutet",
+    "artworkPath": "/artworks/moutet_075.webp",
+    "tags": [
+      "Terre Battue",
+      "Créativité",
+      "Imprévisible"
+    ],
+    "maxHp": 150,
+    "specialAbility": {
+      "name": "Inspiration Instantanée",
+      "description": "Une fois par tour, vous pouvez révéler la carte du dessus de votre deck. Si c'est une Endurance, attachez-la à ce joueur. Sinon, défaussez-la."
+    },
+    "attacks": [
+      {
+        "name": "Amorti Masqué",
+        "cost": 1,
+        "damage": 20,
+        "effect": "Lancez une pièce. Si c'est face, la prochaine attaque de l'adversaire échoue."
+      },
+      {
+        "name": "Rhapsodie du Court",
+        "cost": 3,
+        "damage": 90
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "paire_076",
+    "type": "PLAYER",
+    "name": "Benoît Paire",
+    "artworkPath": "/artworks/paire_076.webp",
+    "tags": [
+      "Dur",
+      "Folie",
+      "Revers"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Génie Imprévisible",
+      "description": "Avant d'attaquer, lancez une pièce. Si c'est face, votre attaque inflige +40 dégâts. Si c'est pile, l'attaque échoue et ce joueur s'inflige 20 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Revers d'Artiste",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Éclair d'Avignon",
+        "cost": 3,
+        "damage": 100
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "tilden_077",
+    "type": "PLAYER",
+    "name": "Bill Tilden",
+    "artworkPath": "/artworks/tilden_077.webp",
+    "tags": [
+      "Gazon",
+      "Légende",
+      "Tacticien"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Empire du Jeu",
+      "description": "Une fois par tour, vous pouvez regarder les 3 cartes du dessus de votre deck. Gardez-en 1 en main et replacez les autres dans l'ordre de votre choix sur le dessus du deck."
+    },
+    "attacks": [
+      {
+        "name": "Service Classique",
+        "cost": 2,
+        "damage": 40
+      },
+      {
+        "name": "Volée Impériale",
+        "cost": 4,
+        "damage": 120,
+        "effect": "Cette attaque inflige +10 dégâts pour chaque carte dans votre main."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "vilas_078",
+    "type": "PLAYER",
+    "name": "Guillermo Vilas",
+    "artworkPath": "/artworks/vilas_078.webp",
+    "tags": [
+      "Terre Battue",
+      "Endurance",
+      "Passion"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Roi de la Poussière",
+      "description": "Si la carte 'Stade' en jeu est 'Terre Battue', soignez 20 PV à ce joueur entre chaque tour."
+    },
+    "attacks": [
+      {
+        "name": "Lift Argentin",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Tempête de Buenos Aires",
+        "cost": 4,
+        "damage": 130,
+        "effect": "L'adversaire doit défausser la carte du dessus de son deck."
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "ashe_079",
+    "type": "PLAYER",
+    "name": "Arthur Ashe",
+    "artworkPath": "/artworks/ashe_079.webp",
+    "tags": [
+      "Gazon",
+      "Légende",
+      "Élégance"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Dignité du Champion",
+      "description": "Si ce joueur met K.O. un adversaire, retirez 30 dégâts de ce joueur et piochez 1 carte supplémentaire."
+    },
+    "attacks": [
+      {
+        "name": "Service de Grâce",
+        "cost": 2,
+        "damage": 40,
+        "effect": "Le joueur Défenseur ne peut pas utiliser sa Capacité Spéciale au prochain tour."
+      },
+      {
+        "name": "Héritage d'Ashe",
+        "cost": 3,
+        "damage": 110
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "bruguera_080",
+    "type": "PLAYER",
+    "name": "Sergi Bruguera",
+    "artworkPath": "/artworks/bruguera_080.webp",
+    "tags": [
+      "Terre Battue",
+      "Endurance",
+      "Lift"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Roi de Barcelone",
+      "description": "Tant que ce joueur est Actif, les attaques des joueurs adverses de type 'Dur' ou 'Gazon' infligent 20 dégâts de moins."
+    },
+    "attacks": [
+      {
+        "name": "Lift Catalan",
+        "cost": 2,
+        "damage": 40
+      },
+      {
+        "name": "Tempête de Roland",
+        "cost": 4,
+        "damage": 120,
+        "effect": "L'adversaire ne peut attacher aucune Endurance lors de son prochain tour."
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "stan_smith_081",
+    "type": "PLAYER",
+    "name": "Stan Smith",
+    "artworkPath": "/artworks/stan_smith_081.webp",
+    "tags": [
+      "Gazon",
+      "Volée",
+      "Classe"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Élégance Intemporelle",
+      "description": "Une fois par tour, après que ce joueur a attaqué, vous pouvez l'échanger gratuitement avec l'un des joueurs de votre Banc."
+    },
+    "attacks": [
+      {
+        "name": "Service Wimbledon",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Volée Impériale",
+        "cost": 3,
+        "damage": 100
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "del_potro_082",
+    "type": "PLAYER",
+    "name": "Juan Martín del Potro",
+    "artworkPath": "/artworks/del_potro_082.webp",
+    "tags": [
+      "Dur",
+      "Puissance",
+      "Coup Droit"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Tour de Tandil",
+      "description": "Si ce joueur a subi des dégâts lors du tour précédent, ses attaques infligent +30 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Coup Droit Marteau",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Canon Argentin",
+        "cost": 4,
+        "damage": 140,
+        "effect": "Ce joueur s'inflige 10 dégâts à lui-même."
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Gazon",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "ivanisevic_083",
+    "type": "PLAYER",
+    "name": "Goran Ivanišević",
+    "artworkPath": "/artworks/ivanisevic_083.webp",
+    "tags": [
+      "Gazon",
+      "Service",
+      "Folie"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "As de Split",
+      "description": "Si ce joueur devient votre joueur Actif pendant ce tour, le joueur Défenseur ne peut pas battre en retraite lors du prochain tour."
+    },
+    "attacks": [
+      {
+        "name": "Service Tornade",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Orage de Wimbledon",
+        "cost": 3,
+        "damage": 100,
+        "effect": "Lancez une pièce. Si c'est face, cette attaque inflige +30 dégâts. Si c'est pile, elle n'inflige aucun dégât supplémentaire mais vous piochez 1 carte."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "chang_084",
+    "type": "PLAYER",
+    "name": "Michael Chang",
+    "artworkPath": "/artworks/chang_084.webp",
+    "tags": [
+      "Terre Battue",
+      "Vitesse",
+      "Mental"
+    ],
+    "maxHp": 150,
+    "specialAbility": {
+      "name": "Esprit de Combat",
+      "description": "Les attaques du joueur adverse infligent 20 dégâts de moins à ce joueur (après application de la Faiblesse et de la Résistance)."
+    },
+    "attacks": [
+      {
+        "name": "Contre Éclair",
+        "cost": 1,
+        "damage": 30
+      },
+      {
+        "name": "Marathon Légendaire",
+        "cost": 3,
+        "damage": 90,
+        "effect": "Soignez 20 PV à ce joueur."
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "stich_085",
+    "type": "PLAYER",
+    "name": "Michael Stich",
+    "artworkPath": "/artworks/stich_085.webp",
+    "tags": [
+      "Gazon",
+      "Élégance",
+      "Volée"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Fluidité Royale",
+      "description": "Une fois par tour, si vous attachez une carte 'Équipement' à ce joueur, piochez 1 carte."
+    },
+    "attacks": [
+      {
+        "name": "Service Céleste",
+        "cost": 2,
+        "damage": 40
+      },
+      {
+        "name": "Volée de Velours",
+        "cost": 3,
+        "damage": 100,
+        "effect": "Le joueur Défenseur ne peut pas utiliser sa Capacité Spéciale au prochain tour."
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "cash_086",
+    "type": "PLAYER",
+    "name": "Pat Cash",
+    "artworkPath": "/artworks/cash_086.webp",
+    "tags": [
+      "Gazon",
+      "Service-Volée",
+      "Rebelle"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Fureur Australienne",
+      "description": "Si ce joueur a été déplacé de votre Banc vers le poste de joueur Actif ce tour-ci, ses attaques infligent +20 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Rush au Filet",
+        "cost": 2,
+        "damage": 40,
+        "effect": "L'adversaire doit échanger son joueur Actif avec l'un de ses joueurs de Banc."
+      },
+      {
+        "name": "Flamme de Melbourne",
+        "cost": 3,
+        "damage": 110
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "ferrer_087",
+    "type": "PLAYER",
+    "name": "David Ferrer",
+    "artworkPath": "/artworks/ferrer_087.webp",
+    "tags": [
+      "Terre Battue",
+      "Endurance",
+      "Combattant"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Mur de Valence",
+      "description": "Tant que ce joueur est Actif, votre adversaire doit défausser 1 carte de sa main pour jouer une carte 'Staff'."
+    },
+    "attacks": [
+      {
+        "name": "Contre de Fer",
+        "cost": 2,
+        "damage": 40
+      },
+      {
+        "name": "Bataille Sans Fin",
+        "cost": 4,
+        "damage": 120,
+        "effect": "L'adversaire défausse la première carte de son deck."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "berdych_088",
+    "type": "PLAYER",
+    "name": "Tomáš Berdych",
+    "artworkPath": "/artworks/berdych_088.webp",
+    "tags": [
+      "Dur",
+      "Puissance",
+      "Frappe Ligne"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Frappe de Prague",
+      "description": "Les attaques de ce joueur ne sont pas affectées par la Résistance du joueur Défenseur."
+    },
+    "attacks": [
+      {
+        "name": "Laser de Fond",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Marteau Tchèque",
+        "cost": 4,
+        "damage": 130
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "isner_089",
+    "type": "PLAYER",
+    "name": "John Isner",
+    "artworkPath": "/artworks/isner_089.webp",
+    "tags": [
+      "Dur",
+      "Service",
+      "Géant"
+    ],
+    "maxHp": 190,
+    "specialAbility": {
+      "name": "Tour de Charlotte",
+      "description": "Les dégâts infligés par les attaques de ce joueur ne peuvent être réduits par aucun effet du joueur Défenseur."
+    },
+    "attacks": [
+      {
+        "name": "Missile Américain",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Tie-Break Titanesque",
+        "cost": 4,
+        "damage": 160,
+        "effect": "Ce joueur ne peut pas attaquer lors de votre prochain tour."
+      }
+    ],
+    "retreatCost": 4,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "karlovic_090",
+    "type": "PLAYER",
+    "name": "Ivo Karlović",
+    "artworkPath": "/artworks/karlovic_090.webp",
+    "tags": [
+      "Gazon",
+      "Service",
+      "Géant"
+    ],
+    "maxHp": 190,
+    "specialAbility": {
+      "name": "Tour de Zagreb",
+      "description": "Si ce joueur a au moins 3 Endurances attachées, ses attaques infligent +20 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Missile Croate",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Tie-Break Colossal",
+        "cost": 4,
+        "damage": 140,
+        "effect": "Lancez une pièce. Si c'est face, le joueur Défenseur est Paralysé (il ne peut ni attaquer ni battre en retraite au prochain tour)."
+      }
+    ],
+    "retreatCost": 4,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "zverev_091",
+    "type": "PLAYER",
+    "name": "Alexander Zverev",
+    "artworkPath": "/artworks/zverev_091.webp",
+    "tags": [
+      "Dur",
+      "Puissance",
+      "Revers"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Frappe de Hambourg",
+      "description": "Une fois par tour, vous pouvez défausser 1 Endurance attachée à ce joueur. Si vous le faites, piochez 2 cartes."
+    },
+    "attacks": [
+      {
+        "name": "Laser de Fond",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Marteau Allemand",
+        "cost": 4,
+        "damage": 130,
+        "effect": "Défaussez 1 carte au hasard de la main de votre adversaire."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Gazon",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "nalbandian_092",
+    "type": "PLAYER",
+    "name": "David Nalbandian",
+    "artworkPath": "/artworks/nalbandian_092.webp",
+    "tags": [
+      "Dur",
+      "Tacticien",
+      "Vision"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Lecture de Córdoba",
+      "description": "Une fois par tour, quand ce joueur subit une attaque, lancez une pièce. Si c'est face, réduisez les dégâts de 30."
+    },
+    "attacks": [
+      {
+        "name": "Contre Parfait",
+        "cost": 2,
+        "damage": 50,
+        "effect": "Cette attaque ignore les effets de Résistance du Défenseur."
+      },
+      {
+        "name": "Maestro Argentin",
+        "cost": 3,
+        "damage": 110,
+        "effect": "L'adversaire ne peut pas jouer de carte 'Objet' lors de son prochain tour."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Gazon",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "soderling_093",
+    "type": "PLAYER",
+    "name": "Robin Söderling",
+    "artworkPath": "/artworks/soderling_093.webp",
+    "tags": [
+      "Terre Battue",
+      "Puissance",
+      "Aggression"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Choc de Stockholm",
+      "description": "Si ce joueur a des marqueurs de dégâts, ses attaques infligent +30 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Impact Nordique",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Tempête de Puissance",
+        "cost": 4,
+        "damage": 140,
+        "effect": "Cette attaque inflige 10 dégâts à l'un de vos propres joueurs sur le Banc."
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "davydenko_094",
+    "type": "PLAYER",
+    "name": "Nikolay Davydenko",
+    "artworkPath": "/artworks/davydenko_094.webp",
+    "tags": [
+      "Dur",
+      "Vitesse",
+      "Cadence"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Cadence de Moscou",
+      "description": "Si ce joueur a attaqué au tour précédent, son coût de retraite est de 0 ce tour-ci."
+    },
+    "attacks": [
+      {
+        "name": "Retour Fusée",
+        "cost": 2,
+        "damage": 40,
+        "effect": "L'adversaire doit défausser 1 carte au hasard de sa main."
+      },
+      {
+        "name": "Rafale Incessante",
+        "cost": 3,
+        "damage": 100
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "coria_095",
+    "type": "PLAYER",
+    "name": "Guillermo Coria",
+    "artworkPath": "/artworks/coria_095.webp",
+    "tags": [
+      "Terre Battue",
+      "Vitesse",
+      "Malice"
+    ],
+    "maxHp": 150,
+    "specialAbility": {
+      "name": "Prince de Santa Fe",
+      "description": "Une fois par tour, si ce joueur est sur le Banc, vous pouvez l'échanger avec votre joueur Actif. Si vous le faites, soignez-lui 20 PV."
+    },
+    "attacks": [
+      {
+        "name": "Glissade Maîtrisée",
+        "cost": 1,
+        "damage": 30
+      },
+      {
+        "name": "Tempête d'Ocre",
+        "cost": 3,
+        "damage": 90,
+        "effect": "Défaussez 1 Endurance attachée au joueur Défenseur."
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "gonzalez_096",
+    "type": "PLAYER",
+    "name": "Fernando González",
+    "artworkPath": "/artworks/gonzalez_096.webp",
+    "tags": [
+      "Terre Battue",
+      "Coup Droit",
+      "Intensité"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Bombardier de Santiago",
+      "description": "Si votre adversaire a moins de cartes Récompense restantes que vous, les attaques de ce joueur infligent +40 dégâts."
+    },
+    "attacks": [
+      {
+        "name": "Coup Droit Volcanique",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Explosion Chilienne",
+        "cost": 4,
+        "damage": 150,
+        "effect": "Ce joueur s'inflige 30 dégâts à lui-même."
+      }
+    ],
+    "retreatCost": 2,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "krajicek_097",
+    "type": "PLAYER",
+    "name": "Richard Krajicek",
+    "artworkPath": "/artworks/krajicek_097.webp",
+    "tags": [
+      "Gazon",
+      "Service-Volée",
+      "Puissance"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Couronne de La Haye",
+      "description": "Lorsque vous jouez une carte 'Staff' (Supporter), les attaques de ce joueur infligent +20 dégâts pour ce tour."
+    },
+    "attacks": [
+      {
+        "name": "Service Royal",
+        "cost": 2,
+        "damage": 50
+      },
+      {
+        "name": "Volée Néerlandaise",
+        "cost": 4,
+        "damage": 130
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "lopez_098",
+    "type": "PLAYER",
+    "name": "Feliciano López",
+    "artworkPath": "/artworks/lopez_098.webp",
+    "tags": [
+      "Gazon",
+      "Élégance",
+      "Gaucher"
+    ],
+    "maxHp": 160,
+    "specialAbility": {
+      "name": "Grâce de Tolède",
+      "description": "Une fois par tour, après avoir attaqué avec ce joueur, vous pouvez piocher 1 carte."
+    },
+    "attacks": [
+      {
+        "name": "Service Ciselé",
+        "cost": 2,
+        "damage": 40
+      },
+      {
+        "name": "Volée Andalouse",
+        "cost": 3,
+        "damage": 100
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Gazon"
+  },
+  {
+    "templateId": "cilic_099",
+    "type": "PLAYER",
+    "name": "Marin Čilić",
+    "artworkPath": "/artworks/cilic_099.webp",
+    "tags": [
+      "Dur",
+      "Puissance",
+      "Service"
+    ],
+    "maxHp": 180,
+    "specialAbility": {
+      "name": "Force de Međugorje",
+      "description": "Si ce joueur est le seul joueur de type 'Dur' sur votre terrain, ses attaques coûtent 1 Endurance de moins."
+    },
+    "attacks": [
+      {
+        "name": "Canon Croate",
+        "cost": 2,
+        "damage": 60
+      },
+      {
+        "name": "Éclair de New York",
+        "cost": 4,
+        "damage": 140,
+        "effect": "Cette attaque n'est pas affectée par la Résistance adverse."
+      }
+    ],
+    "retreatCost": 3,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "sanchez_vicario_100",
+    "type": "PLAYER",
+    "name": "Arantxa Sánchez Vicario",
+    "artworkPath": "/artworks/sanchez_vicario_100.webp",
+    "tags": [
+      "Terre Battue",
+      "Défense",
+      "Combattante"
+    ],
+    "maxHp": 170,
+    "specialAbility": {
+      "name": "Mur de Barcelone",
+      "description": "Tous les dégâts infligés à vos joueurs sur le Banc par des attaques adverses sont annulés."
+    },
+    "attacks": [
+      {
+        "name": "Glissade Catalane",
+        "cost": 2,
+        "damage": 40,
+        "effect": "Soignez 20 PV à ce joueur."
+      },
+      {
+        "name": "Tempête de Roland-Garros",
+        "cost": 3,
+        "damage": 90
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Gazon",
+    "resistance": "Terre Battue"
+  },
+  {
+    "templateId": "austin_101",
+    "type": "PLAYER",
+    "name": "Tracy Austin",
+    "artworkPath": "/artworks/austin_101.webp",
+    "tags": [
+      "Dur",
+      "Tacticienne",
+      "Mental"
+    ],
+    "maxHp": 150,
+    "specialAbility": {
+      "name": "Prodige de Torrance",
+      "description": "Si vous jouez en premier lors de la partie, vous pouvez utiliser l'attaque 'Retour Précoce' dès votre premier tour (ce qui est normalement interdit par les règles)."
+    },
+    "attacks": [
+      {
+        "name": "Retour Précoce",
+        "cost": 1,
+        "damage": 30
+      },
+      {
+        "name": "Couronne Américaine",
+        "cost": 3,
+        "damage": 100
+      }
+    ],
+    "retreatCost": 1,
+    "weakness": "Terre Battue",
+    "resistance": "Dur"
+  },
+  {
+    "templateId": "endurance_1",
+    "type": "ENDURANCE",
+    "name": "Endurance",
+    "artworkPath": "/artworks/endurance.webp",
+    "description": "Attachez cette carte à un joueur pour accumuler de l'énergie."
+  },
+  {
+    "templateId": "staff_coach",
+    "type": "STAFF",
+    "name": "Entraîneur",
+    "artworkPath": "/artworks/staff_coach.webp",
+    "effect": "DRAW_2",
+    "description": "Piochez 2 cartes dans votre deck."
+  },
+  {
+    "templateId": "staff_kine",
+    "type": "STAFF",
+    "name": "Kinésithérapeute",
+    "artworkPath": "/artworks/staff_kine.webp",
+    "effect": "HEAL_30",
+    "description": "Soignez 30 PV à votre joueur actif."
+  },
+  {
+    "templateId": "staff_sponsor",
+    "type": "STAFF",
+    "name": "Sponsor",
+    "artworkPath": "/artworks/staff_sponsor.webp",
+    "effect": "EXTRA_ENERGY",
+    "description": "Attachez une Endurance supplémentaire ce tour."
+  }
+]
