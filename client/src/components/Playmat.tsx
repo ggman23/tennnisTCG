@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useGameStore } from '../store/gameStore';
-import { useGameSocket } from '../hooks/useGame';
+import { sendAction } from '../socket/socket';
 import Card from './Card';
 import ActiveZone from './ActiveZone';
 import BenchZone from './BenchZone';
@@ -19,7 +19,15 @@ export default function Playmat() {
   const isMyTurn = useGameStore(s => s.isMyTurn());
   const openModal = useGameStore(s => s.openAttackModal);
 
-  const { playCard, attachEndurance, retreat, endTurn, promoteActive } = useGameSocket();
+  const playCard = (cardId: string, targetId?: string) =>
+    sendAction('PLAY_CARD', { cardId, ...(targetId ? { targetId } : {}) });
+  const attachEndurance = (energyCardId: string, targetId: string) =>
+    sendAction('ATTACH_ENDURANCE', { energyCardId, targetId });
+  const retreat = (newActiveId: string) =>
+    sendAction('RETREAT', { newActiveId });
+  const endTurn = () => sendAction('END_TURN', {});
+  const promoteActive = (cardId: string) =>
+    sendAction('PROMOTE_ACTIVE', { cardId });
 
   const [damagedId, setDamagedId] = useState<string | null>(null);
 

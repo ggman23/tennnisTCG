@@ -1,21 +1,20 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useGameStore } from '../store/gameStore';
-import { useGameSocket } from '../hooks/useGame';
+import { sendAction } from '../socket/socket';
 import { Attack } from '../types/game';
 
 export default function AttackModal() {
   const open = useGameStore(s => s.attackModalOpen);
   const close = useGameStore(s => s.closeAttackModal);
   const myState = useGameStore(s => s.myState());
-  const { attack } = useGameSocket();
 
   if (!myState?.active) return null;
   const pc = myState.active;
   const energyCount = pc.attachedEndurance.length;
 
   const handleAttack = (idx: number) => {
-    attack(idx);
+    sendAction('ATTACK', { attackIndex: idx });
     close();
   };
 

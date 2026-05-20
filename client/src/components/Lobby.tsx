@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useGameStore } from '../store/gameStore';
-import { useGameSocket } from '../hooks/useGame';
+import { getSocket } from '../socket/socket';
 import { DeckInfo } from '../types/game';
 
 const ELEMENT_COLORS: Record<string, string> = {
@@ -12,13 +12,12 @@ const ELEMENT_COLORS: Record<string, string> = {
 
 export default function Lobby() {
   const { pseudo, selectedDeckId, decks, setPseudo, setSelectedDeckId } = useGameStore();
-  const { joinLobby } = useGameSocket();
   const [inputPseudo, setInputPseudo] = useState(pseudo || '');
 
   const handlePlay = () => {
     const p = inputPseudo.trim() || 'Joueur';
     setPseudo(p);
-    joinLobby(p, selectedDeckId);
+    getSocket().emit('join_lobby', { pseudo: p, deckId: selectedDeckId });
   };
 
   return (
